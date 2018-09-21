@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .navBox{
+       line-height: 40px;
+       width: 500px;
+       border: 1px solid red;
+       overflow: hidden;
+       text-align: center;
+       margin-left:200px;
+    }
+    .navBox a{
+      float: left;
+      width: 100px;
+      text-decoration: none;
+      color:white;
+      background:skyblue;
+      font-weight: bold;
+    }
+    .navBox a.current{
+      background:black;
+    }
+  </style>
+</head>
+<body>
+  <p class="navBox">
+      <a href="#">淘宝</a>   
+      <a href="#">京东</a>   
+      <a href="#">苏宁易购</a>   
+      <a href="#">亚马逊</a>   
+      <a href="#">当当图书</a>   
+  </p>
+  <script>
+    //点击a,添加事件处理
+     var p_obj = document.querySelector('.navBox');
+     p_obj.onclick = function(event){
+      var current = event.srcElement || event.target;
+      console.log('目标元素',current);
+      //this:指向调用函数的对象
+      console.log('this',this);
+      //添加背景
+      var a_obj = document.querySelectorAll('.navBox a');
+      for(var i=0;i<a_obj.length;i++){
+        a_obj[i].classList.remove('current')
+      }
+      //给当前的a添加current类      
+      current.classList.add('current');
+     }
+  </script>
+</body>
+</html>

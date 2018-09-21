@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../04_jq_02/jq/jquery-1.9.1.min.js"></script>
+	<script>
+       $(function(){
+          //显示按钮
+          $(".btn1").click(function(){
+          	 $("p").show(400, function() {
+          	 	// alert('显示');
+          	 });
+          });
+          //隐藏按钮
+          $(".btn2").click(function(){
+          	 $("p").hide(400, function() {
+          	 	// alert('隐藏');
+          	 });
+          });
+          //显示/隐藏按钮
+          $(".btn3").click(function(){
+          	 $("p").toggle('slow',function() {
+          	 	// alert('效果完成');
+          	 });
+          });
+          //向下滑动
+          $(".btn4").click(function(){
+          	 $("p").slideDown('slow',function() {
+          	 	// alert('效果完成');
+          	 });
+          });
+          //向下滑动
+          $(".btn5").click(function(){
+          	 $("p").slideUp('slow',function() {
+          	 	// alert('向下滑动');
+          	 });
+          });
+          //切换/滑动
+          $(".btn6").click(function(){
+          	 $("p").slideToggle('slow',function() {
+          	 	// alert('效果完成');
+          	 });
+          });
+          //淡入
+          $(".btn7").click(function(){
+          	 $("p").fadeIn('slow',function() {
+          	 	// alert('淡入');
+          	 });
+          });
+          // 淡出
+          $(".btn8").click(function(){
+          	 $("p").fadeOut('slow',function() {
+          	 	// alert('淡出');
+          	 });
+          });
+          // 切换淡入淡出
+          $(".btn9").click(function(){
+          	 $("p").fadeToggle('slow',function() {
+          	 	// alert('切换淡入淡出');
+          	 });
+          });
+       });
+	</script>
+</head>
+<body>
+	<div>
+		<input type="button" value="显示" class="btn1">
+		<input type="button" value="隐藏" class="btn2">
+		<input type="button" value="显示/隐藏" class="btn3">
+		<input type="button" value="向下滑动" class="btn4">
+		<input type="button" value="向上滑动" class="btn5">
+		<input type="button" value="切换/滑动" class="btn6">
+		<input type="button" value="淡入" class="btn7">
+		<input type="button" value="淡出" class="btn8">
+		<input type="button" value="切换淡入淡出" class="btn9">
+	</div>
+	<p style="width:500px;height:200px;background:pink"></p>
+</body>
+</html>

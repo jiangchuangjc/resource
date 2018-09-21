@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//声明一个索引数组
+       var arr1=['aa','bb','cc','dd'];
+               //  0    1    2    3
+    //声明一个关联数组
+       var student=[];
+       student["id"]='007';
+       student["sname"]='jiangchuang';
+       student["sex"]='male';
+       student["age"]='18';
+    //for循环遍历取数组元素0-arr1.length-1
+    for(var i=0;i<=arr1.length-1;i++){
+    	console.log(arr1[i]);
+    	document.write("下标"+i+"值为"+arr1[i]+"<hr>");
+    }
+    //for...in循环遍历
+    //key是一个隐藏的指针，会自动往下移，知道取不到元素
+    for(key in arr1){
+	//key:存储的是数组元素对应的下标
+	//arr1[key]:值
+        console.log(key);
+        console.log(arr1[key]+"<hr>");
+    }
+
+    //遍历关联数组
+    document.write("<ul>");
+    for(key in student){
+    	document.write("<li>"+key+":"+student[key]+"</li>");
+    }
+    document.write("</ul>");
+    //在程序里把数组形式
+    /*   键:值(键值对)
+         0:aa
+         1:bb
+         2:cc
+     */
+    var num=0;
+    for(key in student){
+	//key:存储的是数组元素对应的下标
+	//arr1[key]:值
+        console.log(key);
+        console.log(student[key]+"<hr>");
+        num++;
+    }
+    console.log(num);
+	</script>
+</body>
+</html>

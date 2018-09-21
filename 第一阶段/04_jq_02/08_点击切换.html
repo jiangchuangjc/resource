@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{padding: 0;margin: 0;}
+	   .bigBox{
+	   	/* border: 1px solid red; */
+	   	width: 1200px;
+	   	margin: 0 auto;
+	   	position: relative;
+	   }
+	   .bigPic{
+	   	margin: 0 auto;
+	   	width: 1200px;
+	   }
+       .smallPic{
+       	position: absolute;
+       	left: 50%;
+       	bottom: 20px;
+       	/* border: 1px solid blue; */
+       }
+       .smallPic img{
+       	float: left;
+       	margin-left: 10px;
+       }
+       .smallPic img.current{
+       	 border: 2px solid blue;
+       }
+       .bigBox .list{
+       	list-style-type: none;
+       	position: absolute;
+       	/* border: 1px solid red; */
+       	top: 0px;
+       	left:0px;
+       	width: 380px;
+       	list-style-position: inside;
+       }
+       .bigBox .list li{
+       	background: rgba(53,154,191,0.5);
+       	height: 400px;
+        color: red; 
+        font-size: 36px;
+        padding-top: 130px;
+        line-height: 60px;
+        padding-left: 20px;
+       }
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	  $(function(){
+        $(".bigPic img").hide();
+        $(".bigPic img").eq(0).show();
+        $(".list li").hide();
+        $(".list li").eq(0).show();
+        $(".smallPic img").click(function(){
+        	$(".smallPic img").removeClass("current");
+        	$(".smallPic img").eq($(this).index()).addClass("current");
+        	$(".bigPic img").hide();
+        	$(".bigPic img").eq($(this).index()).show();
+            $(".list li").hide();
+        	$(".list li").eq($(this).index()).show();
+        });
+        setInterval($(".smallPic img").click(), 1000);
+});
+
+
+
+       
+	</script>
+</head>
+<body>
+<div class="bigBox">
+	<div class="bigPic">
+		<img src="案例8/hero/b_1.jpg">
+		<img src="案例8/hero/b_2.jpg">
+		<img src="案例8/hero/b_3.jpg">
+		<img src="案例8/hero/b_4.jpg">
+		<img src="案例8/hero/b_5.jpg">
+		<img src="案例8/hero/b_6.jpg">
+		<img src="案例8/hero/b_7.jpg">
+		<img src="案例8/hero/b_8.jpg">
+	</div>
+	<div class="smallPic">
+		<img src="案例8/hero/s_1.jpg" width="60px" height="60px" class="current">
+		<img src="案例8/hero/s_2.jpg" width="60px" height="60px">
+		<img src="案例8/hero/s_3.jpg" width="60px" height="60px">
+		<img src="案例8/hero/s_4.jpg" width="60px" height="60px">
+		<img src="案例8/hero/s_5.jpg" width="60px" height="60px">
+		<img src="案例8/hero/s_6.jpg" width="60px" height="60px">
+		<img src="案例8/hero/s_7.jpg" width="60px" height="60px">
+		<img src="案例8/hero/s_8.jpg" width="60px" height="60px">
+   </div>
+   <ul class="list">
+   	  <li>1.鲁班七号<br>机关造物<br>鲁班大师，智障250，膜拜，忌惮膜拜。</li>
+   	  <li>2.安琪拉<br>暗夜萝莉<br>生命就像人家的魔法书，涂涂改改又是一年</li>
+   	  <li>3.庄周<br>逍遥梦幻<br>蝴蝶是我，我就是蝴蝶<br>		一群人在人家梦里打来打去，有意思吗</li>
+   	  <li>4.大乔<br>伊势巫女<br>守望着天空，大海，和你的回忆。
+</li>
+   	  <li>5.妲己<br>魅惑之狐<br>为什么会痛苦，一直微笑就好了</li>
+   	  <li>6.狄仁杰<br>断案大师<br>以陛下的名义，你被捕了</li>
+   	  <li>7.曹操<br>鲜血枭雄<br>宁叫我负天下人</li>
+   	  <li>8.李白 <br>青莲剑仙<br>一篇诗，一斗酒，一曲长歌，一剑天涯</li>
+   </ul>
+</div>
+</body>
+</html>

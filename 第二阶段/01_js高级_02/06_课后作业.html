@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //最大值
+    function max(arr){
+      arr.sort(function(a,b){
+        return b-a;
+      })
+      return arr;
+    }
+    var arr1 = ["1",1,2,3,4,5,true,"1"]    
+    console.log(max(arr1));
+    console.log("最大值是:"+arr1[0]);
+    console.log("最小值是:"+arr1[arr1.length-1]);
+   
+    //数组去重
+    function distinct(arr){
+    //1)放一个空盒子,用来存储新的字符串(无重复)
+    var newArr = [];
+    // 2)依次取旧字符串的元素,然后到新字符串里检验
+    for(var i=0;i<arr.length;i++){//字符下标循环 对应的字符 str.charAt(i);
+      if(newArr.indexOf(arr[i])==-1){
+        newArr.push(arr[i]);
+      }
+    }
+    return newArr;
+  }
+  console.log(distinct([1,1,2,3,3,5,6,5,7,true,"true","1",10,'2']));
+  //数组去重
+  function distinct1(arr){
+    arr.sort();
+    for(var i=0;i<arr.length;i++){
+      if(arr[i]===arr[i+1]){
+        arr.splice(i,1);
+        i--;        
+      }           
+    }
+    return arr;    
+  }
+  console.log(distinct1([0,1,0,1,"1",true,"true"]));
+  //数组去重2
+  function distinct2(arr){
+    var newArr = [];
+    arr.sort();
+    for(var i=0;i<arr.length;i++){
+      if(arr[i]!==arr[i+1]){
+        newArr.push(arr[i]);   
+      }           
+    }
+    return newArr;    
+  }
+  console.log(distinct2([0,1,0,1,"1",true,"true"]));
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      .box{
+      	background: skyblue;
+      	font-size: 14px;
+      	margin-top: 50px;
+      }
+      .box a{
+      	text-decoration: none;
+      	color: #565454;
+      	display: inline-block;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      }
+      .box a:first-child{
+      	background: red;
+      }
+      .box a:hover{
+      	background: red;
+      }
+	</style>
+</head>
+<body>
+
+	<script>
+	  var proArr=['安徽省','海南省','浙江省','湖南省','湖北省','江苏省','福建省'];
+       document.write("<select>")            
+           for(i=0;i<=proArr.length-1;i++){
+           	if(proArr[i]=="江苏省"){
+           	 document.write("<option selected>"+proArr[i]+"</option>");
+           }else{
+           	document.write("<option value='i'>"+proArr[i]+"</option>");          
+       }    
+   }       
+       document.write("</select>")
+
+
+       var navArr=['首页','公司新闻','公司动态','招聘信息','友情链接','发展历程'];
+       document.write("<div class='box'>");
+        for(j=0;j<=navArr.length-1;j++){
+        	document.write("<a href='#'>"+navArr[j]+"  "+"</a>");
+        }
+       document.write("</div>");
+       var count=0;
+       for(i=0;i<=100/5;i++){
+       	  for(j=0;j<=100/3;j++){
+       	  	for(k=0;k<=300;k++){
+                if(i+j+k==100&&(5*i+3*j+k/3==100)){
+                	count++;
+                	console.log(i,j,k);
+                }
+       	  	}
+       	  }
+       }
+       document.write(count);
+	</script>
+</body>
+</html>

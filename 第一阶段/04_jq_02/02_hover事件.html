@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      .box{
+      	width: 800px;
+      	height: 40px;
+      	border: 1px solid skyblue;
+      }
+      .red{
+      	background: red;
+      }
+      .blue{
+      	background: blue;
+      }
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+       $(function(){
+       	  //鼠标进入div，变红色背景，添加文字
+       	  //移出去除背景色，移除文字
+       	  $(".box").hover(function() {
+       	  	$(".box").addClass('red');
+       	  	$(".box").html("沁园春 雪");
+       	  }, function() {
+       	  	$(".box").removeClass('red');
+       	  	// $(".box").html("");
+       	  	document.querySelector('.box').innerHTML = "";
+       	  });
+       });
+	</script>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

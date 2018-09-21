@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      .p1{
+      	 color: red;
+      	 font-size: 24px;
+      }
+	</style>
+</head>
+<body>
+	<script>
+      //1)日期对象:Date
+      var today = new Date();
+      console.log(today);//Tue Aug 21 2018 14:09:47 GMT+0800 (中国标准时间)
+      //声明一个指定日期的时间对象
+      var date1 = new Date('2018/10/01 11:12:13');
+      console.log(date1);//Mon Oct 01 2018 11:12:13 GMT+0800 (中国标准时间)
+
+      //2)日期对象提供的API方法
+          //A)获取年份
+          var year = today.getFullYear();
+          console.log(year);//2018
+          //B)获取月份
+          var month = today.getMonth();
+          console.log(month);//7:  月份的下标
+          //C)获取日
+          var day = today.getDate();
+          console.log(day);//21
+          //D)获取星期
+          var week = today.getDay();
+          console.log(week);//2
+          //E)获取时
+          var H = today.getHours();
+          console.log(H);
+          //F)获取分
+          var M = today.getMinutes();
+          console.log(M);
+          //G)获取秒
+          var S = today.getSeconds();
+          console.log(S);
+          if(H<10){
+          	H='0'+H;
+          }
+          if(M<10){
+          	M='0'+M;
+          }
+          if(S<10){
+          	S='0'+S;
+          }
+     //     switch(week){
+     //     case 0:week="日";break;	
+     // 	case 1:week="一";break;
+     // 	case 2:week="二";break;
+     // 	case 3:week="三";break;
+     // 	case 4:week="四";break;
+     // 	case 5:week="五";break;
+     // 	case 6:week="六";break;
+     // }
+          var arr = ['日','一','二','三','四','五','六'];
+          week = arr[week];
+          //显示在页面上
+          //2018年8月21日 星期二 14:31:09
+          var now = year+'年'+(month+1)+'月'+day+'日'+
+          	' '+'星期'+week+' '+H+':'+M+':'+S;
+          	document.write("<p class='p1'>"+now+"</p>");
+
+    //方法getTime()
+    //当前距离1970年1月1日 有多少毫秒
+    var time = new Date().getTime();
+    console.log(time);
+    //2018/11/11距离1970年1月1日 有多少毫秒
+    var endTime = new Date('2018/11/11').getTime();
+    console.log(endTime);
+    //差值 今天距离双11有多少毫秒
+    var offTime = endTime-time; 
+    console.log((endTime-time)/1000/60/60/24);
+	</script>
+</body>
+</html>

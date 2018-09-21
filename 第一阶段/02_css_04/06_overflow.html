@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        .box{
+        	width: 400px;
+        	border: 1px solid red;
+        	font-size: 24px;
+        	height: 100px;
+        	/* 溢出：; */
+        	/* overflow: visible; */
+        	overflow: auto;
+        	/* overflow: hidden; */
+        }
+        .list{
+        	width: 240px;
+        	border: 1px solid blue;
+        	padding-left: 0;
+        	list-style: disc inside;
+        }
+        .list li{
+        	border-bottom: 1px dashed blue;
+        	height: 40px;
+            line-height: 40px;
+            /* 不能断行，不许换行 */
+            white-space: nowrap;
+            /* 溢出内容：隐藏 */
+            overflow: hidden;
+            /* 溢出文本：以省略号显示 */
+            text-overflow:ellipsis;
+        }
+	</style>
+</head>
+<body>
+	<div class="box">
+		1.别减肥了，你丑不仅仅是因为你胖！
+		2.假如今天生活欺骗了你，不要悲伤，不要哭泣，因为明天生活还会继续欺骗你。 
+		3.又一天过去了。今天过得怎么样，梦想是不是更远了？
+		4.有些女生觉得说自己是吃货能显得可爱。其实并没有这样的效果。
+		5.“老师你好，请问像我这样的没有背景的北大毕业生应该如何定位自己？”
+	</div>
+	<ul class="list">
+		<li>别减肥了，你丑不仅仅是因为你胖！</li>
+		<li>人生很多事，终究是会随着时间好起来的。</li>
+		<li>生活就该像这只贱贱的猫，喝掉毒鸡汤，然后豁达向上。</li>
+		<li>“社会底层群众中受教育程度最高的一批人。”</li>
+		<li>hello hello hello hello hello hello hello hello</li>
+	</ul>
+</body>
+</html>

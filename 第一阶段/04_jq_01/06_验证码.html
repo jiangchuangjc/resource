@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<style>
+       .p1{
+          width: 80px;
+          line-height: 20px;
+          border: 1px solid red;
+          text-align: center;
+          margin-left: 65px;
+       }
+       input[type=text]{
+       	height: 20px;
+       	width: 80px;
+       	border: 1px solid orange;
+       	outline: none;
+       }
+       input[type=button]{
+       	width: 50px;
+       	height: 20px;
+       	background: skyblue;
+       }
+	</style>
+	<script>
+      $(function(){
+        
+        function createCode(){ 
+          code = '';//验证码字符串
+         //字符库
+          var selectArr = [];
+          for(i=0,j=48;i<=61,j<=122;i++,j++){
+          selectArr[i]=String.fromCharCode(j);
+            if(j==57){j=j+7;}
+            else if(j==90){j=j+6}           
+         }
+          // 字符串接收验证码
+           for(var i=1;i<=6;i++){
+           	var index = Math.floor(Math.random()*selectArr.length);
+           	code += selectArr[index];
+           }
+          console.log(code);
+          $(".p1").html(code); //把验证码显示在p标签里
+       }
+     createCode();
+     $(".btn").click(function(){
+        createCode();
+     });
+     $("input[type=button]").click(function(){
+        if($("input[type=text]").val().toUpperCase() == code.toUpperCase()){
+          alert('恭喜，验证通过');
+        }else{
+          alert('验证码有误，请重新输入');
+        }
+     });
+ })
+	</script>
+	
+</head>
+<body>
+    <p class="p1"></p>
+    验证码: <input type="text" name="code">
+    <a href="#" class="btn">点击刷新验证码</a>
+    <input type="button" value="验证"">
+</body>
+</html>

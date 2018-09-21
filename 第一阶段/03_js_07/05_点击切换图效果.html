@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        .picture>img{
+        	width: 500px;
+        }
+        .smallPic img{
+        	width: 124px;
+        }
+        .current{
+        	outline: 1px solid blue;
+        }
+	</style>
+</head>
+<body>
+	<div class="picture" id="pic1">
+		<img src="myimg/pic1.png">
+		<div class="smallPic">
+			<img src="myimg/pic1.png" class="current">
+			<img src="myimg/pic2.png">
+			<img src="myimg/pic3.png">
+			<img src="myimg/pic4.png">
+		</div>
+	</div>
+	<script>
+      var bigImg = document.querySelector('.picture>img');
+      console.log(bigImg);
+      var smallImg = document.querySelectorAll('.smallPic img');
+      console.log(smallImg);
+      for(key in smallImg){
+      	smallImg[key].onclick = function(e){
+          console.log(smallImg[key]);
+      		//什么是e,鼠标事件对象
+      		console.log(e);
+      		console.log(e['srcElement']);
+      		console.log(e['target']);
+      		console.log(e.target);
+      		console.log(e['toElement']);
+      		console.log(this);
+
+      		// 1.把小图的src赋值给大图的src
+      		console.log(this.src);
+          bigImg.src = this.src;
+          for(var i=0;i<=smallImg.length-1;i++){
+            console.log(i);
+            smallImg[i].classList.remove("current");
+          }
+          this.classList.add('current'); 
+        }
+      }
+  </script>
+</body>
+</html>

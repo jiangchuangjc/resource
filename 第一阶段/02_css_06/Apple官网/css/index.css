@@ -1,0 +1,273 @@
+
+* @Author: Administrator
+* @Date:   2018-08-08 10:00:00
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-08 18:09:08
+*/
+/* 初始化样式 */
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+    font-family: '微软雅黑';
+    font-size: 13px;
+}
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+}
+/* 公共类 */
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.overflowH{
+	overflow: hidden;
+}
+.autoW{
+	width: 1000px;
+	margin: 0 auto;
+}
+.father:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+/* 导航区navBox */
+	.navBox{
+		/* border: 1px solid red; */
+		background: #606060;
+	}
+	.con{
+		border: 1px solid green;
+	}
+	.navBox .con img,.navBox .con .navTxt{
+		float: left;
+	}
+	.navBox .con img{
+		margin-top: 14.5px;
+	}
+	.navBox .con .navTxt{
+		/* border: 1px solid #F607DB; */
+		line-height: 50px;
+		/* 把参照物设置成父元素 */
+		position: relative;
+	}
+	.navBox .con .navTxt a{
+		/* border: 1px solid black; */
+		height: 50px;
+		display: block;
+		padding: 0 18px;
+		color: white;
+		font-size: 20px;
+	}
+	.navBox .con .navTxt>a:hover{
+		color:black;
+	}
+	/* 定位二级导航 */
+	.navBox .con .navTxt ul{
+		position: absolute;
+		left: 0;
+		top: 50px;
+		background: #BEBDBD;
+		display: none;/*隐藏*/
+		width: 100%;
+		text-align: center;
+		z-index: 10;/*提高图层顺序*/
+	}
+	/* 鼠标经过以及导航，让弟弟二级导航显示出来 */
+	.navBox .con .navTxt>a:hover+ul{
+		display:block;
+	}
+	/* 鼠标经过大盒子navTxt,让子元素二级导航显示出来 */
+	.navBox .con .navTxt:hover ul{
+		display:block;
+	}
+	.navBox .con .navTxt ul a{
+	    color: black;
+	}
+	.navBox .con .navTxt ul a:hover{
+		color:white;
+	}
+
+/* banner区bannerBox */
+	.bannerBox{
+		width: 1300px;
+		height: 601px;
+		/* border: 2px solid green; */
+		margin: 0 auto;
+		position: relative;
+	}
+	/* 页面默认显示第一张图 */
+	/* 把所有图片都隐藏 */
+	.bannerBox .pics img{
+		display: none;
+	}
+	/* 显示第一张图 */
+	.bannerBox .pics img:first-child{
+		display: block;
+	}
+	/* 左右按钮组：要定位在盒子垂直居中 */
+	.bannerBox .btns{
+		/* border: 1px solid skyblue; */
+	}
+	.bannerBox .btns img{
+		position: absolute;
+		top:50%;
+		margin-top: -40px;
+	}
+	.bannerBox .btns img:first-child{
+		left: 5px;
+	}
+	.bannerBox .btns img:last-child{
+		right: 5px;
+	}
+	/* 矩形块区域 */
+	.bannerBox .squares{
+	    /* border: 1px solid purple; */
+	    position: absolute;
+	    left: 0;
+	    bottom: 0;
+	    width: 100%;
+	    text-align: center;/*只对行元素起作用*/
+	}
+	.bannerBox .squares span{
+		width: 14px;
+		height: 14px;
+		display: inline-block;
+		background: #CCCCCC;
+		margin: 10px 10px;
+	}
+	.bannerBox .squares span.current{
+		background: #000000;
+	}
+
+/* 图文区 */
+	.picTxt{
+		border: 1px solid red;
+		margin-top: 70px;
+		margin-bottom: 70px;
+	}
+	/* 小盒子宽度一样，等间距分布 */
+	.picTxt .smallBox{
+		/* border: 1px solid blue; */
+		float: left;
+		width: 30%;
+		margin-left: 2.5%;	
+		text-align: center;
+	}
+	/* .picTxt .smallBox:last-child{
+		margin-right: 0;
+	} */
+	.picTxt .smallBox a{
+		color: #551A8B;
+		font-weight: bold;
+		font-size: 20px;
+	}
+	.picTxt .smallBox p:last-child{
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+/* 图片展示区 */
+.pictureBox{
+	border: 1px solid red;
+}
+.pictureBox .leftBox{
+	/* border: 1px solid blue; */
+}
+.pictureBox .rightBox{
+	/* border: 1px solid green; */
+	width: 636px
+}
+/* 图片组：把彩色图覆盖在无色图的上方 */
+ .images{
+   /* border: 1px solid purple; */
+   position: relative;
+}
+ .images img:last-child{
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	/* display: none; */
+}
+/* 默认隐藏彩色图，鼠标经过盒子，显示彩色图 */
+  .images:hover img:last-child{
+	opacity: 1;
+}
+/* 会出现闪屏问题 */
+/* .pictureBox .images img:first-child:hover+img:last-child{
+	/* opacity: 1; */
+/* 	display: block;
+}   */
+
+/* 消除img和div底部的间距 */
+.pictureBox  .images img{
+	display: block;
+}
+
+/* 文字区 */
+.txt{
+	/* border: 1px solid red; */
+	text-align: center;
+	margin-top: 100px;
+}
+.txt a{
+	color: #551A8B;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 36px;
+}
+.txt p{
+	font-size: 16px;
+	line-height: 20px;
+}
+/* 链接区 */
+.link{
+	/* border: 1px solid red; */
+	text-align: center;
+	margin-top: 100px;
+}
+.link .over{
+	/* border: 1px solid blue; */
+	text-align: center;
+	width: 192px;
+	height: 70px;
+	margin: 0 auto;
+
+}
+.link .below{
+	/* border: 1px solid blue; */
+	text-align: center;
+	width: 64px;
+	height: 64px;
+	margin: 0 auto;
+}
+
+/* 版权区 */
+.copyRight{
+	height: 100px;
+	/* border: 1px solid red; */
+	margin-top: 80px;
+}
+.copyRight .leftBox{
+	/* border: 1px solid black; */
+	margin-top: 50px;
+	font-size: 16px;
+	margin-left: 30px;
+}
+.copyRight .rightBox{
+	margin-right: 20px;
+}
+.copyRight a{
+	margin-top: 50px;
+	display: inline-block;
+	font-size: 16px;
+	color: black;
+}

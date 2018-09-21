@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <style>
+     .box{
+      width: 200px;
+      height: 200px;
+     }
+  </style>
+</head>
+<body>
+<script>
+//练习1:输出num1的值:_50__,num2的值;49___	
+var num1 = 30;
+	num1 += 20;
+	num1--;
+var num2 = num1++;
+//console.log(num1);
+//console.log(num2);
+//练习2:输入一个年份,判断是闰年还是平年?
+      var year=prompt("请输入年份");
+       if(year%100!=0 && year%4==0 || year%400==0){
+          document.write(year+"年是闰年");
+       }else{
+          document.write(year+"年是平年");
+       }
+//练习3:根据输入的颜色,显示div不同的背景
+//div大小:200*200大小
+/*
+	红色:背景红色
+	蓝色:背景蓝色
+	粉色:背景粉色
+	其他:无色,黑色边框	
+*/
+    var myStyle=prompt("请输入颜色");
+    if(myStyle=="red"){
+    	document.write("<div class='box' style='background-color:red'></div>");
+    }else if(myStyle=="blue"){
+    	document.write("<div class='box' style='background-color:blue'></div>");
+    }else if(myStyle=="pink"){
+    	document.write("<div class='box' style='background-color:pink'></div>");
+    }else{
+    	document.write("<div class='box' style='border:1px solid black'></div>");
+    }  
+//练习4: 
+var n = 5&&4<10;// n的结果是?true
+
+var n = 10||5<6 ;//n的结果是?10 
+//10隐式转换true,满足条件直接返回(短路)；                                             
+var n = false || (20-10) > 20;//n的结果是?false                                  
+</script>	
+</body>
+</html>

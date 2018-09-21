@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      .mn{
+      	background: #0095EB;
+      	color: white;
+      	width: 100px;
+      	height: 24px;
+      }
+	</style>
+</head>
+<body>
+<form action="index.php">
+	配送地区：<select name="province">
+					<option value="beijing">北京市</option>
+					<option value="chongqin">重庆市</option>
+					<option value="shanghai">上海市</option>
+	            </select>
+	            <select name="city">
+					<option value="dongcheng">东城区</option>
+					<option value="xicheng">西城区</option>
+					<option value="nancheng">南城区</option>
+	            </select><br><br>
+	预订人：&nbsp;<input type="text" name="yudingren"><br><br>
+	手机号码：<input type="text" name="shouji" maxlength="11"> 或固定电话：<input type="text" name="dianhua" maxlength="11"><br><br>
+	配送地址：<input type="text" name="dizhi"> 有助于快递送货确认地址 <br><br>
+	配送时间：<input type="text" name="shijian"><br><br>
+	金额/张数：<button name="mn" class="mn" >添加金额/张数</button><br><br>
+	金额合计：<input type="text" name="heji"><br><br>
+	数量合计：<input type="text" name="shuliang"><br><br>
+	是否需要发票：<input type="radio" name="fapiao" value="yes" >是&nbsp;
+	              <input type="radio" name="fapiao" value="no">否<br><br>
+	发票类型：    <input type="radio" name="types" value="putong" >普通发票&nbsp;
+	              <input type="radio" name="types" value="zengzhi">增值发票<br><br>
+	发票抬头：    <input type="radio" name="head" value="geren" >个人&nbsp;
+	              <input type="radio" name="head" value="danwei">单位<br><br>
+	单位名称：<input type="text" name="fname"><br><br>
+	发票内容：<input type="radio" name="neirong" value="cards" >农产品卡&nbsp;
+	          <input type="radio" name="neirong" value="chanping" >农产品&nbsp;
+	              <input type="radio" name="neirong" value="other">其他<br><br>
+	发票明细：    <input type="radio" name="mingxi" value="putong" >是&nbsp;
+	              <input type="radio" name="mingxi" value="zengzhi">否<br><br>
+	支付方式：    <input type="radio" name="pay" value="cash" >现金&nbsp;        
+	              <input type="radio" name="pay" value="card" >刷卡&nbsp;
+	              <input type="radio" name="pay" value="zhipiao">支票<br><br>
+	备注：     <textarea name="intro" id="" cols="80" rows="5"></textarea><br><br>
+	          <input type="submit" value="保存">
+	          <input type="reset">
+	          </form>
+</body>
+</html>

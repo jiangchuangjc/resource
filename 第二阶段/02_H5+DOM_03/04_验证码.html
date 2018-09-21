@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    canvas{
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="200px" height="80px"></canvas>
+  <button>点击刷新</button>
+  <script>
+    //需求:6位验证码(字母+数字) 点  线
+    //点: arc(x,y,1,0,2*Math.PI);  x,y是随机数
+    //线:moveTo(x,y)
+        //lineTo(x,y) x,y随机数
+    //文字:fillText('文字',x,y);x,y随机数
+    //随机颜色:rgb(r,g,b) 0-255;
+
+    //1)功能1:生成一个min,max返回的随机数
+    //返回值:随机数
+    var btn = document.querySelector('button');
+    function ranNumber(min,max){
+       return Math.round((max-min)*Math.random()+min);      
+    }
+    console.log(ranNumber(10,100));
+    //2)功能2:生成一个随机色
+    //返回值:rgb(r,g,b)
+    function ranColor(){
+      var r = ranNumber(0,255);
+      var g = ranNumber(0,255);;
+      var b = ranNumber(0,255);;
+      return 'rgb('+r+','+g+','+b+')';
+    }
+    console.log(ranColor());
+    //3)功能3:生成点
+    var canvas = document.querySelector('#canvas');
+    var context = canvas.getContext('2d');
+    function createPoint(){
+    context.beginPath();
+    context.arc(ranNumber(5,canvas.width-5),ranNumber(5,canvas.height-5),ranNumber(1,3),0,Math.PI*2,false);//顺时针
+    context.fillStyle = ranColor();
+    context.fill();
+  }
+  //
+    //4)功能4:生成线条
+    function createLine(){
+      context.beginPath();
+      context.moveTo(ranNumber(0,canvas.width),ranNumber(0,canvas.height));
+      context.lineTo(ranNumber(0,canvas.width),ranNumber(0,canvas.height));
+      context.strokeStyle = ranColor();
+      context.lineWidth = '2';
+      context.stroke();
+    }
+    //5)功能5:生成6位随机字符
+    function createCode(){
+      var str = '';
+      var arr = [0,1,2,3,4,5,6,7,8,9,'A','B','C'];
+      for(var i=0;i<6;i++){
+        var index = ranNumber(0,arr.length-1);
+        str += arr[index];
+      }
+      context.font = '20px 微软雅黑'
+      context.textBaseline = 'top';
+      context.rotate(ranNumber(0,30)*Math.PI/180);
+      context.fillText(str,50,10);      
+    }
+    
+    //6)用户需求:综合函数
+    function init(){
+      //调用相应的功能模块
+      var a = ranNumber(6,8);
+      for(var j=0;j<6;j++){
+      //context.clearRect(0,0,200,80);
+      createPoint();
+      createLine();      
+      }
+      createCode();
+    }
+    init()
+    btn.onclick = init;
+  </script>
+</body>
+</html>

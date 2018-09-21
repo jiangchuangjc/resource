@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       p{
+       	width: 100px;
+       	height: 100px;
+       	background: red;
+       }
+	</style>
+	<script src="../04_jq_02/jq/jquery-1.9.1.min.js"></script>
+	<script>
+      $(function(){
+         //单击按钮:让p发生动画效果
+         $("input[type=button]").click(function(){
+         	$("p").animate({
+         		marginLeft: "500px",//右移
+         		background: "skyblue",
+         	    width:"200px",
+         	    height:"200px"},
+         		1000, function() {
+         		$("p").animate({
+         			marginTop:"500px"},//下移
+         			1000, function() {
+         			$("p").animate({
+         				marginLeft: "0"},//上移
+         				1000, function() {
+         				$("p").animate({
+         					marginTop: "10px",//左移
+         				    width:"100px",
+         	                height:"100px"},
+         					1000, function() {
+         					/* stuff to do after animation is complete */
+         				});
+         			});
+         		});
+         	});
+         });
+      });
+	</script>
+</head>
+<body>
+	<div>
+		<input type="button" value="按钮">
+	</div>
+	<p></p>
+</body>
+</html>

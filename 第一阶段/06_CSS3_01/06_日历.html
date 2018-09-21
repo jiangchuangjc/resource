@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      .box{
+      	width: 538px;
+      	height: 370px;
+      	background:url(css3/01-选择器/images/bg.jpg) no-repeat center;
+      	/* border: 1px solid red; */
+      	padding:35px 0 0 20px;
+      }
+      .table1{
+      	margin-top: 30px;
+      	/* border: 1px solid red; */
+      	width: 385px;
+      	height: 320px;
+      	text-align: center;
+      	font-size: 20px;
+      }  
+      .table1 td{
+      	border-top: 1px solid #CBCBCB;
+      }
+      .table1 tr:first-child td{
+      	border-top: 1px solid #5BADFF;
+      }
+      .table1 tr td.first{
+      	background: orange;
+      	color: white;
+      }
+      .table1 td:nth-child(6){
+          color: #E7322E;
+      }
+      .table1 td:nth-child(7){
+          color: #E7322E;
+      }
+      .table1 tr td.next{
+      	color:#C2C2C0;
+      }
+      .table1 tr td.holiday{
+      	color:#E7322E;
+      }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<table class="table1" cellpadding="1" cellspacing="0">
+			<tr>
+				<td>一</td>
+				<td>二</td>
+				<td>三</td>
+				<td>四</td>
+				<td>五</td>
+				<td>六</td>
+				<td>日</td>
+			</tr>
+			<tr>
+			    <td class="next">30</td>
+				<td class="first">1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>				
+			</tr>
+			<tr>
+				<td class="holiday">7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td>15</td>
+				<td>16</td>
+				<td>17</td>
+				<td>18</td>
+				<td>19</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>21</td>
+				<td class="holiday">22</td>
+				<td>23</td>
+				<td>24</td>
+				<td>25</td>
+				<td>26</td>
+				<td>27</td>
+			</tr>
+			<tr>
+				<td>28</td>
+				<td>29</td>
+				<td>30</td>
+				<td>31</td>
+				<td class="next">1</td>
+				<td class="next">2</td>
+				<td class="next">3</td>
+			</tr>
+		</table>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var f = 1.1;
+   f--;
+    console.log(f);
+    var num1 = 25; // 二进制00000000000000000000000000011001
+    var num2 = ~num1; // 二进制11111111111111111111111111100110
+    //alert(num2);
+
+    var oldValue = -64; // 等于二进制的11111111111111111111111111000000
+var newValue = oldValue >>>5
+    console.log(newValue);
+
+    console.log("23" < "3");
+    console.log(0 == null);
+    for (var propName in window) {
+    document.write(propName+'<br>');
+}
+var num = 0;
+//outermost:
+for (var i=0; i < 10; i++) {
+for (var j=0; j < 10; j++) {
+if (i == 5 && j == 5) {
+break;
+}
+num++;
+}
+}
+alert(num); //55
+
+var num = 25;
+switch (true) {
+case num < 0:
+alert("Less than 0.");
+break;
+case num >= 0 && num <= 10:
+alert("Between 0 and 10.");
+break;
+case num > 10 && num <= 20:
+alert("Between 10 and 20.");
+break;
+default:
+alert("More than 20.");
+}
+
+  </script>
+</body>
+</html>

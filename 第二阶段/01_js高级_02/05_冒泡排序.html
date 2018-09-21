@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //冒泡排序-排序算法
+    // 1)比较相邻的两个数值,如果前一个比后一个元素大,交换位置
+    // 2)每一轮比较完,最后一个元素应该是最大的
+    // 3)最后一个元素不参与下一轮比较
+    var arr = [8,2,4,3,5,10];
+    // 第一轮排序:2,4,3,5,8,10 比较5次
+    // 第二轮比较:2,3,4,5,8  比较4次
+    // 第三轮排序:2 3 4 5  比较3次
+    // 第四轮排序:2 3 4  比较2次
+    // 第五轮排序:2 3  比较1次
+
+    //函数: desc(arr)
+    //功能: 数值数组从小到大排序
+    //返回排序完成后的数组
+    function desc(arr){
+    for(var i=1;i<arr.length;i++){//第几轮排序
+       for(var j=0;j<arr.length-i;j++){//比较几次
+         //两两比较
+         if(arr[j]>arr[j+1]){
+           //临时变量:存储前一个值
+            var temp = arr[j];
+            arr[j] = arr[j+1];
+            arr[j+1] = temp;
+         }
+       }
+      //  console.log("第"+i+"轮排序:");
+      //  console.log(arr);
+    }
+    return arr;
+  }
+  console.log(desc(arr));
+  console.log(desc([9,8,7,6,5,4,3,2,1,0]));
+  </script>
+</body>
+</html>

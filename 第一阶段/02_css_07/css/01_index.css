@@ -1,0 +1,135 @@
+/*
+* @Author: Administrator
+* @Date:   2018-08-09 11:11:48
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-08-27 19:33:22
+*/
+/* 初始化 */
+*{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	font-size: 14px;
+	font-family: '微软雅黑';
+}
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style-type: none;
+}
+
+/* 公共类 */
+.overflowH{
+	overflow: hidden;
+}
+.father:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.pos_rel{
+	position: relative;
+}
+.pos_abs{
+	position: absolute;
+}
+.pos_fix{
+	position: fixed;
+}
+/* 导航区navBox */
+.navBox{
+	margin: 0 auto;
+	width: 1000px;
+	/* border: 1px solid red; */
+	height: 1000px;
+}
+.navBox .leftBox{
+	/* border: 1px solid orange; */
+}
+.navBox .rightBox{
+	/* border: 1px solid green; */
+}
+.navBox .rightBox>li{
+    float: left;
+    margin-left: 5px; /* 二级导航模块左右隔开 */  
+}
+
+/* 一级导航 */
+.navBox .ulBox>li>a{
+     /* border: 1px solid purple; */
+     line-height: 30px;
+     padding: 0 6px;
+     font-size: 16px;
+     color: #9D9C9C;
+}
+/* 分割线垂直居中 */
+.navBox .ulBox>li>span{
+	line-height: 30px;
+	color: #9D9C9C;
+}
+/* 二级导航 */
+.navBox .ulBox .innerBox{
+	border: 1px solid #8E8A8A;
+    top: 30px;
+    display: none;
+    background: pink;
+    z-index: 10;
+}
+/* 鼠标经过li,让子盒子innnerBox显示出来 */
+.navBox .ulBox>li.hover:hover .innerBox{
+    display: block;
+}
+.navBox .ulBox .innerBox0{
+	left: 0;
+	width: 280px;
+    height: 150px;
+}
+.navBox .ulBox .innerBox1{
+	left: 0;
+	width: 170px;
+	height: 100px;
+}
+.navBox .ulBox .innerBox2{
+	left: 0;
+	width: 140px;
+	height: 80px;
+}
+.navBox .ulBox .innerBox3{
+	right: 0;
+	width: 100px;
+	height: 220px;
+}
+.navBox .ulBox .innerBox4{
+	left: 0;
+	width: 100%;
+	height: 300px;
+}
+/*修饰边框
+一级：上，左，右边框；
+二级：上下左右边框
+让一级盒子遮盖住二级上边框
+*/
+.navBox .ulBox>li.hover>a{
+	/* 添加透明色边框 */
+     border: 1px solid transparent;
+	 border-bottom: none;
+     height: 30px;
+     display: inline-block;
+     position: relative;
+     z-index: 11;
+}
+/* 鼠标进入父盒子，一级添加边框和背景 */
+.navBox .ulBox>li.hover:hover>a{
+	background: pink;
+	border: 1px solid #8E8A8A;
+	border-bottom: none;
+}
+

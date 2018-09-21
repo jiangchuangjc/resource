@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="02_form.php?code=001" method="post" enctype='multipart/form-data'>
+     <p>
+       <label>用户名</label>
+       <input type="text" name="uname">
+     </p>
+     <p>
+      <label>昵&nbsp;称</label>
+      <input type="text" name="unick">
+    </p>
+    <p>
+      <label>性&nbsp;别</label>
+      <input type="radio" name="usex" value="boy">男
+      <input type="radio" name="usex" value="girl">女
+    </p>
+    <p>
+      <label>爱&nbsp;好</label>
+      <input type="checkbox" name="hobby[]" value="sing">唱歌
+      <input type="checkbox" name="hobby[]" value="dance">跳舞
+      <input type="checkbox" name="hobby[]" value="playgame">打电动
+    </p>
+    <p>
+      <label>头&nbsp;像</label>
+      <input type="file" name="photo">
+    </p>
+    <p><input type="submit"></p>
+  </form>
+</body>
+</html>

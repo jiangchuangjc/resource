@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   //需求1:把指定的字符串转换成列表的格式
+   var str = "鲁班七号@射手@60%;后羿@射手@70%;貂蝉@法师@68%;孙悟空@刺客@70%";
+   
+   document.write("<ul>");
+    var str1 = str.split(";");
+    for(var i=0;i<str1.length;i++){
+      // var str2 = str1[i].replace(/@/," 职业:");
+      // var str3 = str2.replace(/@/," 血量:");
+      var str2 = str1[i].split("@");
+      document.write("<li>"+"名字:"+str2[0]+" 职业:"+str2[1]+" 血量:"+str2[2]+"</li>");
+    }
+   document.write("</ul>");  
+   //需求2:
+   //把文章中"指定词"用"指定颜色"标记出来
+   var str = "君不见，黄河之水天上来，奔流到海不复回。君不见，高堂明镜悲白发，朝如青丝暮成雪。人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。烹羊宰牛且为乐，会须一饮三百杯。岑夫子，丹丘生，将进酒，杯莫停。与君歌一曲，请君为我倾耳听。(倾耳听 一作：侧耳听)钟鼓馔玉不足贵，但愿长醉不复醒。(不足贵 一作：何足贵；不复醒 一作：不愿醒/不用醒)古来圣贤皆寂寞，惟有饮者留其名。(古来 一作：自古；惟 通：唯)陈王昔时宴平乐，斗酒十千恣欢谑。主人何为言少钱，径须沽取对君酌。五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。";
+   /*function fun1(num1,num2){
+    var str1 = str.slice(0,num1);
+    var str2 = str.slice(num1,num2);    
+    var str3 = str.slice(num2,-1);
+    document.write(str1+"<font color=red>"+str2+"</font>"+str3);
+  }
+  fun1(10,20);*/
+  //使用方法:replace(old,new)
+  function Mark(article,keyWords,color){
+    //在正则里使用变量
+    var reg = new RegExp(keyWords,"g");
+    return article.replace(reg,"<font style='background:"+color+"'>"+keyWords+"</font>");
+  }
+  document.write(Mark(str,"君不见",'red'));
+  //需求3:写一个函数,字符串去重
+  var str = "012345678987654321"
+  //函数名:distinct(str)
+  //-参数:str 传递的字符串
+  //-功能:给字符串去重
+  //-结果:返回去重的新字符串
+  function distinct(str){
+    //1)放一个空盒子,用来存储新的字符串(无重复)
+    var newStr = "";
+    // 2)依次取旧字符串的元素,然后到新字符串里检验
+    for(var i=0;i<str.length;i++){//字符下标循环 对应的字符 str.charAt(i);
+      if(newStr.search(str.charAt(i))==-1){
+        newStr += str.charAt(i)
+      }
+    }
+    console.log(newStr);
+  }
+  distinct(str);
+  distinct("jjjjjjjaaaaaaasgsjhdghsyeiuhsdbhcxjjkdskjsdjkdsjjksahubdsuiui");
+
+  // 练习案例1:去除字符串前面的空格
+  //把空格替换成空字符串""
+  //replace(/\s/g,"");
+  function ltrim(str){
+     return str.replace(/^\s*/g,"");
+  }
+  console.log("  as   dfgh         ");
+  console.log(ltrim("  as   dfgh        "));
+
+  // 练习案例2:去除字符串后面的空格
+  //把空格替换成空字符串""
+  //replace(/\s/g,"");
+  function rtrim(str){
+     return str.replace(/\s*$/g,"");
+  }
+  console.log("  as   dfgh         ");
+  console.log(rtrim("  as   dfgh        "));
+
+  // 练习案例3:去除字符串两端的空格
+  //把空格替换成空字符串""
+  //replace(/\s/g,"");
+  function atrim(str){
+     return str.replace(/(^\s*)|(\s*$)/g,"");
+  }
+  console.log("  as   dfgh         ");
+  console.log(atrim("  as   dfgh        "));
+
+  // 练习案例4:去除所有空格
+  //把空格替换成空字符串""
+  //replace(/\s/g,"");
+  function atrim(str){
+     return str.replace(/\s/g,"");
+  }
+  console.log("  as   dfgh         ");
+  console.log(atrim("  as   dfgh        "));
+
+  //练习案例5:将英文句子中单词首字母变大写
+  var str = "i am jiangchuang";
+   function cap(str){
+     //1)分割字符串,结果是数组
+     var arr = str.split(" ");
+     console.log(arr);
+     //2)依次取到数组元素
+     for(key in arr){//key:下标 元素:arr[key]
+     //取首字母:变大写 + 后边的字符
+     arr[key] = arr[key].charAt(0).toUpperCase()+arr[key].slice(1);     
+     }
+     return arr.join(" ");//把数组转成字符串
+   }
+   console.log(cap(str));
+  </script>
+</body>
+</html>

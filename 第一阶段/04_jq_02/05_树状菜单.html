@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+      .menu{
+      	width: 250px;
+      	border: 1px solid red;
+      	line-height: 32px;
+      }
+      .menu dt{
+      	background: skyblue;
+      	text-indent: 8px;
+      }
+      .menu dd{
+      	background: #B3B0B0;
+      	text-indent: 30px;
+      }
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+      //需求:页面初始状态，二级都是隐藏，显示第一组
+    $(function(){
+      $(".menu dd").hide();
+      $(".menu dt:first").nextUntil("dt").show();
+      //用户点击一级，展开对应的二级
+      $(".menu dt").click(function(){
+      	$(".menu dd").hide();
+      	$(this).nextUntil("dt").show();
+      });
+  });
+	</script>
+</head>
+<body>
+	<dl class="menu">
+		<dt>图书</dt>
+		<dd>漫画</dd>
+		<dd>青年文摘</dd>
+		<dd>励志文学</dd>
+
+		<dt>电子产品</dt>
+		<dd>遥控汽车</dd>
+		<dd>手机模型</dd>
+		<dd>洗衣机</dd>
+		<dd>冰箱</dd>
+
+		<dt>服装</dt>
+		<dd>男装</dd>
+		<dd>女装</dd>
+		<dd>童装</dd>
+	</dl>
+</body>
+</html>

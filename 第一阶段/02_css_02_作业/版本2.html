@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       body{
+       	background:url(images/background.jpg) no-repeat center;
+       	background-attachment: fixed;
+       	background-size: 100%;
+       }
+       .left{
+       	float: left;
+       }
+       .right{
+       	float: right;
+       }
+       .left1{
+       	margin-left: 75px;
+       }
+       .left2{
+       	margin-left: 18px;
+       }
+       .turncolor{
+       	color:white;
+       }
+       .box0{
+       	/* border: 1px solid orange; */
+       	width: 700px;
+       	margin-left: auto;
+       	margin-right: auto;
+       }
+       .box1{
+       	/* border: 1px solid red; */
+       	width: 120px;
+       	margin-top: 80px;
+       	margin-left: auto;
+       	margin-right: auto;
+       	margin-bottom: 50px;
+
+       }
+       .box2{
+       /* 	border: 1px solid blue; */
+       	width: 600px;
+       	height: 70px;
+       	margin-left: auto;
+       	margin-right: auto;
+
+       }
+        .button1{
+       	width: 300px;
+       	height: 70px;
+        border: 1px solid skyblue;
+        font-size: 24px;
+        font-family: "黑体";
+       }
+       .box3{
+       	/* border: 1px solid red; */
+       	width: 600px;
+       	
+       	margin-left: auto;
+       	margin-right: auto;
+       	margin-top: 20px;
+
+       }
+       .img1{
+       	width: 51px;
+        height: 56px;
+       }
+       .tex1{
+       	height: 50px;
+       	width: 525px;
+       	margin-top: 0;
+       	float: right;
+       	font-size: 24px;
+       	line-height: 50px;
+       	color: #808080;
+        padding-left: 20px;
+        outline: none;
+       }
+       .box4{
+       	/* border: 1px solid red; */
+       	width: 600px;
+       	height: 50px;
+       	margin-left: auto;
+       	margin-right: auto;
+       	margin-top: 20px;
+       	background: white;
+       }
+        .box5{
+       	font-size: 24px;
+       	line-height: 50px;
+       	height: 50px;
+       	display: inline-block;
+       	width: 150px;
+       	
+       }
+       .box6{
+       	/* border: 1px solid orange; */
+       	width: 600px;
+       	height: 50px;
+       	margin-left: auto;
+       	margin-right: auto;
+       	margin-top: 20px;
+       }
+       .select1{
+       	width: 265px;
+       	height: 50px;
+       	display: inline-block;
+        margin-top: 0;
+        font-size: 24px;
+      
+       }
+       .img2{
+       	width: 51px;
+        height: 50px;
+        float: left;
+       }
+       .box7{
+       	/* border: 1px solid orange; */
+       	width: 600px;
+       	height: 20px;
+       	margin-left: auto;
+       	margin-right: auto;
+       	margin-top: 20px;
+       	color: white;
+       }
+       .box8{
+       	width: 600px;
+       	height: 50px;
+       	margin-left: auto;
+       	margin-right: auto;
+       	margin-top: 20px;
+       }
+       .sub1{
+       	width: 600px;
+       	height: 50px;
+       	color: white;
+       	font-size: 24px;
+       	line-height: 50px;
+       	margin-left: auto;
+       	margin-right: auto;
+       	background: #2ED049;
+       }
+	</style>
+</head>
+<body>
+<div class="box0">
+	<div class="box1">
+		<img src="images/touxiang.jpg" height="120" width="120" alt="">
+	</div>
+	<div class="box2">
+		<input type="button" value="普通注册" class="button1"><input type="button" value="手机注册" class="button1 turncolor" style="background:#C8C1D5">
+	</div>
+	<form action="index.php">
+	<div class="box3">
+		<img src="images/user.jpg" height="120" width="120" alt="" class="img1"><input type="text" value="用户名" name="uname" class="tex1">
+    </div>
+    <div class="box3">
+		<img src="images/email.jpg" height="120" width="120" alt="" class="img1"><input type="text" value="Email" name="uemail" class="tex1">
+    </div>
+    <div class="box3">
+		<img src="images/pwd.jpg" height="120" width="120" alt="" class="img1"><input type="password" value="123" name="upass" class="tex1">
+    </div>
+    <div class="box4">
+    	        <div class="box5 left"><input type="radio" name="sex" value="male" >男</div>
+    	        <div class="box5 left1"><input type="radio" name="sex" value="female">女</div>
+    	        <div class="box5 right"><input type="radio" name="sex" value="secret"checked>保密</div>
+    </div>
+    <div class="box6">
+              <img src="images/position.jpg" height="120" width="120" alt=""
+                class="img2"><select class="select1 left" name="province" id="">
+					<option value="jiangsu">江苏省</option>
+					<option value="zhejiang" selected="selected">浙江省</option>
+					<option value="anhui">安徽省</option>
+	            </select>
+	            <select name="city" id="" class="select1 left2">
+					<option value="nanjing">南京市</option>
+					<option value="suzhou">苏州市</option>
+					<option value="changzhou">常州市</option>
+	            </select>
+    </div>
+    <div class="box7">
+    	<input type="checkbox" name="xieyi" value="1">我已阅读并同意《用户协议》
+    </div>
+    <div class="box8">
+    <input type="submit" value="注册" class="sub1" >
+    </div>
+    </form>
+</div>
+</body>
+</html>

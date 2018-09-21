@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .nav{
+      width: 500px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 添加标签 -->
+  <p class="nav">
+    <a href="#">李白</a>
+    <a href="#">杜甫</a>
+    <a href="#">辛弃疾</a>
+    <a href="#">貂蝉</a>
+    <a href="#">鲁班</a>
+  </p>
+  <ul class="list">
+    <li>春眠不觉晓</li>
+    <li>处处闻啼鸟</li>
+    <li>夜来风雨声</li>
+    <li>花落知多少</li>
+  </ul>
+  <!-- 自定义插件 -->
+  <script>
+    //构造函数创建对象
+    function Elem(selector){
+      //返回 获取到的DOM元素集合
+      this.selector = document.querySelectorAll(selector);      
+    // console.log(Elem('.nav'));
+    //添加一个方法:修改样式 DOM样式
+    Elem.prototype.css = function(){
+      //参数保存在arguments里的
+      console.log(arguments);//样式
+      console.log(this.selector);//DOM集合
+      //1)循环遍历DOM集合,给每一个标签修饰样式
+      for(var i=0;i<this.selector.length;i++){
+        //每一个标签 this.selector[i]
+        console.log(this.selector[i]);
+        //2)操作样式
+        //清空1:2个参数
+        if(arguments.length == 2){
+            this.selector[i].style[arguments[0]] = arguments[1];
+        }else if(arguments.length == 1 && typeof(arguments[0]) == 'string'){
+            return this.selector[i].style[arguments[0]];    
+        }else{//添加多个样式
+          console.log(arguments[0]);
+          for(key in arguments[0]){
+            this.selector[i].style[key] = arguments[0][key];
+          }
+        }
+      }
+    }
+  } 
+    //通过全局变量$()
+    //创建并返回Elem对象
+    window.$ = function(selector){
+      //return document.querySelectorAll(selector);
+      //调用对象
+       var p_obj = new Elem(selector);
+       return p_obj;
+    }
+    console.log($('.nav'));//返回值
+    console.log($('.list'));//返回值
+
+    // 调用css方法
+    //获取color样式值 参数长度为1,并且是字符串 
+    $('.nav').css('width','800px');
+    console.log($('.nav').css('width'));
+    //添加单个样式 参数长度为2
+   
+    //添加多个样式  参数长度为1,不是字符串
+    $('.nav a').css({
+      'color':'red',
+      'background':'pink'
+    })
+  </script>
+</body>
+</html>

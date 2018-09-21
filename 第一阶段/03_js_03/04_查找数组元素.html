@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+      //定义一个数组
+      var arr1=['apple','banana','pear'];
+      //获取数组的长度
+      console.log(arr1.length);
+      //查找元素banana
+      console.log(arr1.indexOf('banana'));//1
+      console.log(arr1.indexOf('pear'));//2
+      console.log(arr1.indexOf('apple'));//0
+      //查找一个元素777
+      console.log(arr1.indexOf('777'));//-1
+      console.log(arr1.lastIndexOf('banana'));
+
+      //定义一个关联数组
+      var student = [];
+          student["id"]="007";
+          student["sname"]="江闯";
+          student["sex"]="male";
+          student["hobby"]="study";
+      //查找性别
+      console.log(student.indexOf("male"));
+      
+
+      //用户名验证：
+      //用户名不能使用已经注册过的用户
+      //
+      //定义已经注册过的用户名
+      var VIP=['apple','banana','pear'];
+      var uname=prompt("请输入用户名");
+        if(VIP.indexOf(uname)!=-1){
+      	console.log("用户名不能使用已经注册过的用户");
+      }else{
+        console.log("该用户已被注册，请直接登录");     
+    }
+  
+	</script>
+</body>
+</html>

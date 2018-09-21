@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1)获取数组中的最大值
+    //函数:getNum(arr)
+    //-功能:获取数值数组的最大值和最小值
+    //-参数:传递的数值数组
+    //-结果:数组类型[最大值,最小值]
+    function getNum(arr){
+      var max = arr[0];
+      var min = arr[0];
+      for(key in arr){
+        max<arr[key]?max=arr[key]:max;
+        min>arr[key]?min=arr[key]:min;
+      }
+      return [max,min];
+    }
+    console.log(getNum([9,63,2,65,1,6,85]));
+
+    //2)数组去重
+    //函数:distinct(arr)
+    //-功能:数组去重
+    //-结果:返回去重后的新的数组
+    function distinct(arr){
+      var newArr = [];//用来存储数组元素
+      for(key in arr){//key:下标  arr[key]
+         if(newArr.indexOf(arr[key])==-1){
+           newArr.push(arr[key]);
+         }
+      }
+      return newArr;
+    }
+    console.log(distinct([0,1,0,1,0,"1",true,"true"]));
+  </script>
+</body>
+</html>

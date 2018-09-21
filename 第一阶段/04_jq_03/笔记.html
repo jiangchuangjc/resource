@@ -1,0 +1,72 @@
+第四章 Jq
+第一节
+一、Jq修改DOM结构
+    <script>
+      1)内部插入
+        $(obj).append($('Some text'));//向尾部追加内容
+        $(obj).appendTo($(father));//把子元素追加到父元素尾部
+        $(obj).prepend($('Some text'));
+        $(obj).prependTo($(father));
+      2)外部插入
+        $("A").after($('B'));
+        $("A").before($('B'));
+        $('A').insertAfter($('B'));
+        $('A').insertBefore($('B'));
+      3)替换
+        $("A").replaceWith($('B'));
+        $("A").replaceAll($('B'));
+      4)删除
+        $(obj).empty();
+        $(obj).remove();
+      5)复制/克隆
+        $(obj).clone();//复制整个元素结构
+        $(obj).clone(true);//复制整个元素结构以及事件
+    </script>
+二、Jq提供的效果
+    <script>
+    1)显示/隐藏(400毫秒)
+      A:show()
+        show('slow/400/fast', function() {
+        	//可选
+        	//回调函数,效果完成之后触发...
+        });
+      B:hide()
+	    hide('slow/400/fast', function() {
+	      	//可选
+        	//回调函数,效果完成之后触发...
+	    });
+	  C:toggle()
+	    toggle('slow/400/fast', function() {
+	      	//可选
+        	//回调函数,效果完成之后触发...
+	    });
+	  2)滑动
+      A:slideDown('slow/400/fast', function() {
+       	
+        });
+      B:slideUp('slow/400/fast', function() {
+       	
+        });
+      C:slideToggle('slow/400/fast', function() {
+       	
+        });
+    3)淡入淡出
+      A:$(obj).fadeIn('slow/400/fast',function() {
+              // alert('淡入');
+        });
+      B:$(obj).fadeOut('slow/400/fast',function() {
+              // alert('淡出');
+        });
+
+      C:$(obj).fadeToggle('slow',function() {
+              // alert('切换淡入淡出');
+        }
+    4)自定义动画(动画效果,速度,回调函数)
+       animate({
+       	param1: value1,
+       	param2: value2},
+       	speed, function() {
+       	/* stuff to do after animation is complete */
+       	//回调函数,动画完成以后做的事情...
+       });
+    </script>

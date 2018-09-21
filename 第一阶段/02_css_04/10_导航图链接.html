@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       .logos{
+       	   width: 600px;
+       	   height: 600px;
+       	   /* border: 1px solid red; */
+       }
+       .logos a{
+       	width: 64px;
+       	height: 64px;
+       	/* border: 1px solid blue; */
+       	display: inline-block;
+        background: url(img/login_icons_small.svg);
+       }
+       .logos .qq{
+       	   background-position: -80px 0;
+       }
+       .logos .douban{
+       	   background-position: -160px 0;
+       }
+       .logos .renren{
+       	   background-position: -240px 0;
+       }
+       .logos .wechat{
+       	   background-position: -320px 0;
+       }
+       /* 鼠标经过，原位置垂直上移80 */
+       .logos .weibo:hover{
+       	background-position: 0 -80px;
+       	background-position: 0 -160px;
+       	
+       }
+       .logos .qq:hover{
+       	background-position: -80px -80px;
+       	background-position: -80px -160px;
+       }
+       .logos .douban:hover{
+       	background-position: -160px -80px;
+       	background-position: -160px -160px;
+       }
+       .logos .renren:hover{
+       	background-position: -240px -80px;
+       	background-position: -240px -160px;
+       }
+       .logos .wechat:hover{
+       	background-position: -320px -80px;
+       	background-position: -320px -160px;
+       }
+	</style>
+</head>
+<body>
+	<div class="logos">
+		<a href="#" class="weibo"></a>
+		<a href="#" class="qq"></a>
+		<a href="#" class="douban"></a>
+		<a href="#" class="renren"></a>
+		<a href="#" class="wechat"></a>
+	</div>
+</body>
+</html>

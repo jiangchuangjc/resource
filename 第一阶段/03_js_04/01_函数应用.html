@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <input type="button" value="关大象" onclick="close1()"><br>
+	<script>
+      // 做一件事情，把大象关进冰箱里
+      function close1(annimal){
+      	document.write("第一步：打开冰箱门<br>");
+      	document.write("第二步：把"+annimal+"关进去<br>");
+      	document.write("第三步：关上冰箱门<br>");
+      }
+
+      //调用函数，才会执行
+      close1("大象");
+      document.write("<hr color=red>");
+      close1("泰迪"); //把泰迪关进去
+      document.write("<hr color=red>");
+      close1("哈士奇"); //把哈士奇关进去
+      document.write("<hr color=red>");
+      //输出学生的个人信息
+      //我的名字是：apple
+      //我来自:江苏省南京市
+      //我的爱好是:学习；
+      //我最大的理想:周游世界
+      //
+      function student(name,address,hobby,dream){
+      	document.write("<p style='color:red'>"+"我的名字是:"+name+"</p>");
+      	document.write("<p style='color:blue'>"+"我来自:"+address+"</p>");
+      	document.write("<p style='color:orange'>"+"我的爱好是:"+hobby+"</p>");
+      	document.write("<p style='color:green'>"+"我最大的理想:"+dream+"</p>");
+      	document.write("<hr>");
+      }
+      student("apple","江苏南京","学习","周游世界");
+      student("banana","江苏扬州","吃喝玩乐","吃遍世界");    
+	</script>
+</body>
+</html>

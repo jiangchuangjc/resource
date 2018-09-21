@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1)对象: 属性(变量)+方法(函数)
+    //应用: 对象.属性名;/对象['属性名']
+    //      对象.方法名(参数值,参数值....)
+
+    //1)方式1: json对象
+    var obj1 = {
+      uname:'apple',
+      age:18,
+      act:function(){//添加方法
+         return '我的名字是'+this.uname+"年龄是"+this.age+'岁';
+      }
+    };
+
+    // 调用对象 obj1就是一个对象 object
+    console.log(obj1);//
+    console.log(obj1.uname);//apple
+    console.log(obj1.act());//我的名字是apple年龄是18岁
+
+    //添加属性和方法
+    obj1.sex = '女';
+    obj1.play = function(game){
+      console.log('今天去玩'+game+'游戏');
+    }
+    console.log(obj1);
+    obj1.play('斗地主');
+
+    //obj1只是一个单个的对象,没有副本的
+
+    //2)创建方式2: new Object()
+    var obj2 = new Object();
+        obj2.num = 10;
+        obj2.str = 'apple';
+        obj2.isNull = function(){
+          if(obj2.str == ""){
+            return true;
+          }else{
+            return false;
+          }
+        }
+    console.log(obj2);
+    console.log(obj2.isNull());
+
+    //obj1是一个对象 :单个实际对象
+    //obj2是一个对象 :单个实际对象
+
+    //工厂模式:定义一个模板
+    //制造人类
+    //属性:名字  身份证号  性别
+    //技能:唱歌(歌曲) 玩游戏(游戏名) 自我介绍(属性)
+    function Person(name,code,sex){
+        //添加属性(构造函数通过this添加属性)
+        this.name = name;
+        this.code = code;
+        this.sex = sex;
+        //方法(占用内存问题)
+        //解决方案:把方法绑定到Person原型上
+        //原型名.prototype.方法名 = function(){}
+        Person.prototype.sing = function(music){
+          console.log("演唱歌曲"+music)
+        }
+        Person.prototype.play = function(game){
+          console.log("玩"+game);
+        }
+        Person.prototype.info = function(){
+          console.log('姓名:'+this.name+' 身份证号:'+this.code+' 性别:'+this.sex);
+        }
+    }
+    //通过对象的方式去引用Person函数
+    //new的方式-->构造函数引用(构造一个对象雏形)
+    //制造第一个人(实例)
+    var person1 = new Person('apple','001','男');
+    console.log(person1);
+    //调用属性
+    console.log(person1.name);//apple
+    //调用方法
+    person1.sing('《忘情水》');//演唱歌曲《忘情水》
+    person1.play('英雄联盟');//玩英雄联盟
+    person1.info();//姓名:apple 身份证号:001 性别:男
+
+    //制造第二个人(实例)
+    var person2 = new Person('banana','002','女');
+    //调用属性
+    console.log(person2.name);
+    //调用方法
+    person2.play('王者荣耀');
+  </script>
+</body>
+</html>

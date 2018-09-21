@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       *{
+       	margin: 0;
+       	padding: 0;
+       }
+       .window{
+       	width: 600px;
+       	height: 265px;
+       	border: 3px solid red;
+       	margin: 100px;
+       	overflow: hidden;/*多余的隐藏 */
+       }
+       .window .list{
+       	line-height: 40px;
+       	/* border: 1px solid orange; */
+        list-style: none inside;
+        text-indent: 20px;
+        width: 3600px;
+       }
+       .window .list li{
+       	/* border-bottom: 1px solid lightgreen; */
+       }
+       .window .list img{
+        float: left;
+       }
+	</style>
+	<script src="../04_jq_02/jq/jquery-1.9.1.min.js"></script>
+	<script>
+       $(function(){
+       	 //移动整个队伍:第一个人跳完之后移动到队伍的末端
+       	 function moveUp(){
+       	 $(".list").animate({
+       	 	marginLeft: "-600px"},
+       	 	1000, function() {
+       	 	//把第一个人放到队伍后面
+       	 	$(".list li:first").insertAfter($(".list li:last"));
+       	 	//把队伍的位置归为0
+       	 	$(".list").css('margin-left', '0');
+       	 });
+     }  
+        moveUp();
+        setInterval(function(){
+        	moveUp();
+        }, 2000);
+ });
+	</script>
+</head>
+<body>
+	<div class="window">
+		<ul class="list">
+			<li><img src="img/hero/b_1.jpg" height="265px" width="600px"></li>
+			<li><img src="img/hero/b_2.jpg" height="265px" width="600px"></li>
+			<li><img src="img/hero/b_3.jpg" height="265px" width="600px"></li>
+			<li><img src="img/hero/b_4.jpg" height="265px" width="600px"></li>
+			<li><img src="img/hero/b_5.jpg" height="265px" width="600px"></li>
+		</ul>
+	</div>
+</body>
+</html>

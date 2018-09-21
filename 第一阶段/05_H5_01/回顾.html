@@ -1,0 +1,178 @@
+Jq知识点
+一、提供了一些API:操作DOM
+    1)onload和onready(jq:ready)
+    onload:加载DOM以及所有外部链接资源
+    ready:加载DOM
+    先onready再onload
+    2)写法:
+    <script>
+      jQuery(document).ready(function($){
+
+      });
+      $(document).ready(function(){
+
+      });
+      $(function(){
+      	//默认ready事件函数体...
+      });
+    </script>
+二、获取DOM 元素(CSS选择器)
+	<script>
+	  一、基本选择器
+      $("#idName");
+      $("*");
+    二、筛选
+      $("ul li:first");
+      $("ul li:eq(0)");
+      $("ul li").eq(n);
+      $("ul li:last");
+      $("ul li:even");
+      $("ul li:odd");
+    三、DOM元素家族
+      $(obj).children('selector');//直接子级
+      $(obj).find('selector');//所有子级(隔代)
+
+      $(obj).parent(selector);//直接父级
+      $(obj).parents(selector);//所有父级
+      
+      // 亲生兄弟
+      $(obj).prev(selector);//上一个哥哥
+      $(obj).prevAll(selector);//所有哥哥
+      $(obj).prevUntil(selector);//找所有的哥哥直到遇到谁停止
+
+      $(obj).next(selector);//上一个弟弟
+      $(obj).nextAll(selector);//所有弟弟
+      $(obj).nextUntil(selector);//找所有的弟弟直到遇到谁停止
+      
+      $(obj).siblings('selector');//所有的兄弟
+	</script>
+
+三、属性操作
+    <script>
+    1.添加属性
+      $(obj).attr('attribute', 'value');
+      $(obj).attr({
+      	property1: 'value1',
+      	property2: 'value2'
+      });
+    2.获取属性值
+      $(obj).attr("属性名");//获取该属性的值
+    3.删除属性
+      $(obj).attr('属性名',"");//把值置空
+    </script>
+
+四、样式操作
+    <script>
+    1.添加样式
+      $(obj).css('样式名', 'value');
+      $(obj).css({
+      	property1: 'value1',
+      	property2: 'value2'
+      });
+    2.获取样式值
+      $(obj).css("样式名");//获取该样式的值
+    3.删除样式
+      $(obj).css('样式名',"");//把值置空
+    </script>
+
+五、Class类名操作
+    <script>
+      1)添加类
+        $(obj).addClass('class_name')
+      2)移除类
+        $(obj).removeClass('class name');
+        $(obj).removeClass();//移除所有类
+      3)切换类
+        $(obj).toggleClass('selector');//切换该类的有/无
+      4)判断类的有/无(结果:true/false)
+        $(obj).hasClass('className');
+    </script>
+
+六、内容和值
+    <script>
+      1)内容(双标记标签)
+        $(obj).html();//获取值
+        $(obj).text();
+        $(obj).html(值);//添加值
+        $(obj).text(值);
+      2)值(表单控件)
+        $("input[name=uname]").val();//获取值
+        $("input[name=uname]").val("apple");//添加值
+    </script>
+
+七、事件
+    <script>
+    //原生js事件写法：
+      var obj = document.getElementById('p1')
+      obj.onclick = function(){
+
+      }
+    //jQuery事件方法:
+      $('#p1').click(function(){
+
+      });
+    //原生js对象想要用jq方法
+      $(obj).click(function(){
+
+      });
+    //this对象
+      $(".p1 a").click(function(){
+      	//当前被单击的a
+      	//原生this只能使用原生的属性和方法
+      	//jq对象才可以用jq方法
+      	this.innerHTML;
+      	$(this).html();
+      });
+    </script>
+
+八、jq效果
+    <script>
+    *速度参数:'slow'/'fast'/400
+    *回调函数:function(){当效果完成之后调用}
+    1)显示/隐藏
+      $(obj).show();
+      $(obj).hide();
+      $(obj).toggle();
+    2)展开/收缩(滑动)
+      $(obj).sildeDown();
+      $(obj).sildeUp();
+      $(obj).sildeToggle();
+    3)淡入/淡出
+      $(obj).fadeIn();
+      $(obj).fadeOut();
+      $(obj).fadeToggle();
+    4)自定义动画
+      $(obj).animate({
+      	param1: value1,
+      	param2: value2},
+      	speed, function() {
+      	/* stuff to do after animation is complete */
+      });
+    </script>
+
+九、修改DOM元素结构位置
+    <script>
+    1)添加
+      $(".father").append('添加在末端');
+      $(".father").prepend('添加在头部');
+      $('添加在末端').appendTo($(".father"));
+      $('添加在头部').prependTo($(".father"));
+
+      $("A").after($('B'));//在A后添加B
+      $("A").before($('B'));//在A前添加B
+
+      $("A").insertAfter($('B'));//在A插入B之后
+      $("A").insertBefore($('B'));//在A插入B之前
+
+    2)替换
+      $("A").replaceWith($("B"));//用B替换A
+      $("A").replaceAll($("B"));//用A替换B
+
+    3)删除
+      $(obj).empty();//清空内容
+      $(obj).remove();//移除整个元素
+
+    4)复制/克隆
+      $(obj).clone();
+      $(obj).clone(true);//复制DOM元素,并且复制事件
+    </script>

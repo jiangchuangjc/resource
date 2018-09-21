@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+     <p>文章内容</p>
+     <textarea name="" id="" cols="30" rows="10" maxlength="150"></textarea>
+     <span>还可以输入150个字</span>
+  </div>
+  <script>
+     //需求:每输入一个字,更新span里的提示信息:还剩多少字符可以输入
+     //剩余字符个数 = maxlength - 当前输入框的字符个数
+     var textarea = document.querySelector('textarea');
+     var span = document.querySelector('span');
+     console.log(textarea,span);
+     textarea.oninput = function(){
+       console.log('输入了内容');
+       var num =150 - textarea.value.length;
+        span.innerHTML = '还可以输入'+num+'个字';
+     }
+  </script>
+</body>
+</html>

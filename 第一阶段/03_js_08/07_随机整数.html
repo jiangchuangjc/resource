@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   input{
+	   	outline: none;
+	   	margin-top: 20px;
+        margin-right: 20px;
+	   }
+	   .bigBox{
+	   	width: 280px;
+	   	height: 150px;
+	   	border: 1px solid green;
+	   	padding-left: 20px;
+	   }
+       .box{
+       	width: 50px;
+       	height: 50px;
+       	border: 1px solid red;
+       	margin-top: 20px;
+       }
+	</style>
+</head>
+<body>
+    <div class="bigBox">
+       最大值: <input type="text" name="max"><br>
+       最小值: <input type="text" name="min"><br>
+       <input type="button" value="随机" onclick="fun1()">
+    </div>
+     <div class="box"></div>
+	<script> 
+	
+	   var max_obj = document.querySelector('input[name=max]');
+	   // console.log(max_obj);
+	   var min_obj = document.querySelector('input[name=min]');
+	   // console.log(min_obj);
+	   function fun1(){
+	   var a = Math.random();
+	   // console.log(a);
+       var b = Number((max_obj.value-min_obj.value)*a)+Number(min_obj.value);
+       console.log(b);
+       var ran = Math.round(b);
+       var div_obj = document.querySelector('.box');
+       div_obj.innerHTML = ran;
+   }
+       // var x = prompt('请输入一个数');
+       // var y = prompt("请输入一个数");
+       
+       // if(x>=y){
+       // 	 var b = Number(a*(x-y))+Number(y);
+       // }else{
+       // 	 var b = Number(a*(y-x))+Number(x);
+       // }
+       // document.write(Math.round(b));
+	</script>
+</body>
+</html>

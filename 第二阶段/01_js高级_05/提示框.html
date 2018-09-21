@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<style>
+    *{margin: 0;padding: 0;}
+  .showBox{
+    width: 300px;
+    height:180px;
+    margin:20px auto;
+    border:1px solid steelblue;
+    border-radius: 4px;
+    position: fixed;
+    /* top: 50%; */
+    margin-top: 70px;
+    left: 50%;margin-left: -150px;
+  }
+  .showBox .title{
+    line-height: 40px;
+    background:steelblue;
+    color: white;
+    text-indent: 16px;
+  }
+  .showBox .content{
+    text-align: center;
+  }
+  .showBox .content .msg{
+    margin-top: 20px;
+    /* border:1px solid red; */
+    line-height: 50px;
+    color: steelblue;
+  }
+  .showBox .content .btns{
+    line-height: 60px;
+  }
+  .showBox .content .btns input{
+    width: 64px;height: 32px;
+    border:none;
+    color: white;
+    outline: none;
+    margin:0 3px;
+    border-radius: 2px;
+  }
+  .btns input.yes{
+    background: red;
+  }
+  .btns input.no{
+    background:steelblue;
+  }
+  
+  </style>
+</head>
+<body>
+  <!-- 消息提示框布局 -->
+  <div class="showBox" id="elem">
+    <div class="title">消息</div>
+    <div class="content">
+      <p class="msg">提示信息内容</p>
+      <p class="btns">
+        <input type="button" class="yes" value="确认">
+        <input type="button" class="no" value="取消">
+      </p>
+    </div>
+  </div>
+
+  <!-- 测试 -->
+  <input type="button" value="购买"  id="btn1">
+  <input type="button" value="删除"  id="btn2">
+
+</body>
+</html>

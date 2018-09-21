@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+     for(var i=0;i<=3;i++){
+        for(var j=1;j<=4;j++){
+        	//打印i是？j是？
+        	document.write(i+":"+j+"<hr>");
+        }
+     }
+
+     //需求2:创建一个5行3列的表格，大小500*300
+       document.write('<table border="1px" bordercolor="#D4156A" width="500" height="300" cellspacing="0" cellpadding="10">');
+	     for(i=1;i<=5;i++){
+	     	if(i%2==0){
+	     	    document.write("<tr bgcolor='pink' align='center' valign='middle'>");}
+	     	else{
+	     		document.write("<tr bgcolor='skyblue' align='center' valign='middle'>");
+	     	}
+	     	  //输出td;
+	     	  for(j=1;j<=3;j++){
+	     	  	document.write("<td>"+i+"行"+j+"列</td>");
+	     	  }
+	     	document.write("</tr>");
+	     }
+	     document.write("</table>");
+   </script>
+</body>
+</html>

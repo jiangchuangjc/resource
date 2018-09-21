@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+         /* 1)通配选择器 */
+     *{
+     	/* border: 1px solid orange; */
+     }
+         /* 2)标签选择器 */
+     html{
+     	border: 1px solid blue;
+     }
+     /* 3)class类选择器 */
+     .list1{
+     	width: 500px;
+     	border: 1px solid green;
+     }
+     .list2{
+     	width: 600px;
+     	border: 3px dashed purple;
+     }
+     .list3{
+     	background: pink;
+     }
+     /* 4)id选择器 */
+     #li_1{
+     	border: 1px solid #168127;
+     	background:skyblue;
+     }
+     /* 5)父子级选择器 */
+     .list4 li{
+        border-bottom: 1px solid red;
+     }
+     .list4 #second{
+     	color: #19DE11;
+     }
+	</style>
+</head>
+<body>
+	<ul class="list1">
+		<li id="li_1">国破山河在，城春草木深。</li>
+		<li>感时花溅泪，恨别鸟惊心。</li>
+		<li id="li_1">烽火连三月，家书抵万金。</li>
+		<li>白头搔更短，浑欲不胜簪。</li>
+	</ul>
+
+	<ol class="list2 list3">
+		<li>爆竹声中一岁除，</li>
+		<li>春风送暖入屠苏。</li>
+		<li>千门万户曈曈日，</li>
+		<li>总把新桃换旧符。</li>
+	</ol>
+
+	<ul class="list2 list4">
+		<li>国破山河在，城春草木深。</li>
+		<li id="second">感时花溅泪，恨别鸟惊心。</li>
+		<li>烽火连三月，家书抵万金。</li>
+		<li>白头搔更短，浑欲不胜簪。</li>
+	</ul>
+</body>
+</html>

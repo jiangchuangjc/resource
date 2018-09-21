@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      .box{
+      	background: skyblue;
+      	font-size: 14px;
+      	margin-top: 50px;
+      }
+      .box a{
+      	text-decoration: none;
+      	color: #565454;
+      	display: inline-block;
+      	padding-left: 10px;
+      	padding-right: 10px;
+      }
+      .box a:first-child{
+      	background: red;
+      }
+      .box a:hover{
+      	background: red;
+      }
+      .p1{
+        text-align: center;
+
+      }
+	</style>
+</head>
+<body>
+<script>
+//练习1:
+//输出一个省份下拉列表,默认选项是:江苏省	
+   var proArr=['安徽省','海南省','浙江省','湖南省','湖北省','江苏省','福建省'];
+       document.write("<select>")            
+           for(i=0;i<=proArr.length-1;i++){
+           	if(proArr[i]=="江苏省"){
+           	 document.write("<option selected>"+proArr[i]+"</option>");
+           }else{
+           	document.write("<option value='i'>"+proArr[i]+"</option>");          
+       }    
+   }       
+       document.write("</select>")
+
+//练习2:
+//输出一个导航条,第一个加上红色背景色
+//导航条效果,文字14px,链接没有下划线,大小自定
+var navArr=['首页','公司新闻','公司动态','招聘信息','友情链接','发展历程'];
+       document.write("<div class='box'>");
+        for(j=0;j<=navArr.length-1;j++){
+        	document.write("<a href='#'>"+navArr[j]+"  "+"</a>");
+        }
+       document.write("</div>"); 
+       document.write("<br><br><br>")
+//课下练习:
+//1)九九乘法口诀表
+//乘数1：i   1-9
+//乘数2：j   1-9
+//乘积：i*j
+    for(i=1;i<=9;i++){
+    	for(j=1;j<=i;j++){
+    		document.write(j+"*"+i+"="+i*j+"&nbsp;&nbsp;&nbsp;");
+    	}
+    	document.write("<br>");
+    }
+    document.write("<br><br><br>")
+//2)拓展:倒金字塔
+    document.write("<p class='p1'>");
+      var n=prompt("请输入金字塔的行数");
+      for(i=n;i>=1;i--){      	
+      	for(j=1;j<=2*i-1;j++){      	
+         document.write("*");          
+        }
+        document.write("<br>");   	
+      }
+      document.write("</p>");
+      document.write("<br><br><br>")
+//3)百钱买百鸡:100元钱买100只鸡
+//	公鸡5元一只,母鸡3元一只,小鸡1元三只,
+//	问能买公鸡,小鸡,母鸡各多少只,有几种买法?
+//  i  0-20
+//  j  0-33
+//  k  0-100
+    var count=0;
+       for(i=0;i<=100/5;i++){
+       	  for(j=0;j<=100/3;j++){
+                var k=100-i-j;       	  	
+                if(5*i+3*j+k/3==100){
+                	count++;//购买方法加1
+                	console.log(i,j,k);
+              }
+       	  }
+       }
+    document.write("共有"+count+"种买法");
+</script>	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   .li{
+	   	width: 500px;
+       	list-style-position: inside;
+       	line-height: 20px;
+	   }
+       .li_1{
+       	background-color: pink;       	
+       }
+       .li_2{
+       	background-color: skyblue;
+       }
+	</style>
+</head>
+<body>
+<script>
+//练习1:求和运算,求1+2+3+4+...+100=?
+var total=0;
+for(i=1;i<=100;i++){
+	total=total+i;
+}
+document.write("和是"+total+"<hr>");
+//练习2:新闻列表实现,
+//偶数行是粉色,奇数行是浅蓝色	
+var newList = [
+'紧急通知',
+'“三八节”女性旅游乐享半价优惠',
+'暂停旅游社业务公告',
+'九华山门票恢复全价',
+'“三八”节短线游走俏',
+'4月初去动物园看羊驼',
+'安徽省旅游指委召开会议号召...'
+];	
+var list="<ol type='1'>";
+      for(i=1;i<=newList.length;i++){          
+          if(i%2==0){
+          	list+="<li class='li li_1'>"+newList[i-1]+"</li>";
+          }else{
+          	list+="<li class='li li_2'>"+newList[i-1]+"</li>";
+          }
+      }
+      list+="</ol>";
+      document.write(list);
+</script>
+</body>
+</html>

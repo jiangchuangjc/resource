@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        .p1{
+        	text-align: left;
+        	border:1px solid skyblue;
+        	width: 400px; 		
+        }
+        .p2{
+        	text-align: center;
+        	border:1px solid orange;
+        	width: 400px; 
+        }
+        .p3{
+            text-align: right;
+            border:1px solid purple;
+        	width: 400px; 
+        }
+	</style>
+</head>
+<body>
+	<script>
+      //写一个金字塔函数
+      //可以随意设定金字塔的形状，等腰，直角
+      function goldTower(num,className){
+        document.write("<p class='"+className+"'>");
+      	for(i=1;i<=num;i++){      	
+      	for(j=1;j<=2*i-1;j++){      	
+         document.write("*");          
+        }
+         document.write("<br>");   	
+      }
+      document.write("</p>");
+ }
+    goldTower(10,"p1");
+    goldTower(15,"p2");
+    goldTower(20,"p3");
+
+    //新闻列表显示成无序列表结构
+    //要求:列表符号类型可以自己设定
+    //偶数行颜色可以自己设
+    var newList = ['紧急通知',
+                   '“三八节”女性旅游乐享半价优惠',
+                   '暂停旅游社业务公告',
+                   '九华山门票恢复全价',
+                   '“三八”节短线游走俏',
+                   '4月初去动物园看羊驼',
+                   '安徽省旅游指委召开会议号召...'];
+    function list(kind,liColor){
+    document.write("<ul type="+kind+">");
+    for(i=1;i<=newList.length;i++){
+    	if(i%2==0){
+    	document.write("<li style='color:"+liColor+"'>"+newList[i-1]+"</li>");
+        }else{
+        	document.write("<li>"+newList[i-1]+"</li>");
+        }
+    }
+    document.write("</ul>");
+}
+    list("square",'blue');
+    list("none",'purple');
+    list('circle','red');
+	</script>
+</body>
+</html>

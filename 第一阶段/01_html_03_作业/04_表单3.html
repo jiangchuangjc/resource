@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p align="center"><font size="+3" face="黑体">会员注册表</font></p>
+	<form action="index.php">
+	用户名：<input type="text" name="uname" value="请输入用户名" maxlength="12"><br><br>
+	密&nbsp;码：<input type="password" name="upass" value="123456" maxlength="12"><br><br>
+	性&nbsp;别：男<input type="radio" name="sex" value="male">&nbsp;
+	            女<input type="radio" name="sex" value="female">&nbsp;
+	            人妖<input type="radio" name="sex" value="two-in-one" checked><br><br>
+	爱&nbsp;好：吃饭<input type="checkbox" name="hobby" value="eat">&nbsp;
+	            睡觉<input type="checkbox" name="hobby" value="sleep">&nbsp;
+	            打豆豆<input type="checkbox" name="hobby" value="打豆豆" checked><br><br>
+	出生年月：<input type="text" name="birthday"><br><br>
+	籍&nbsp;贯：<select name="province" id="">
+					<option value="jiangsu">江苏省</option>
+					<option value="zhejiang" selected="selected">浙江省</option>
+					<option value="anhui">安徽省</option>
+	            </select>
+	            <select name="city" id="">
+					<option value="nanjing">南京市</option>
+					<option value="suzhou">苏州市</option>
+					<option value="changzhou">常州市</option>
+	            </select><br><br>
+	头&nbsp;像：<input type="file" name="headPic" multiple>
+	<br><br>
+	自我评价：<textarea name="intro" id="" cols="60" rows="6"></textarea>
+	<br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit">
+	&nbsp;&nbsp;<input type="reset">
+	</form>
+</body>
+</html>

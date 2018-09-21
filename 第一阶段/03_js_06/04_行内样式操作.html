@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <p class="navBox">
+    	<a href="#">首页</a>
+    	<a href="#">国际新闻</a>
+    	<a href="#">国内新闻</a>
+    	<a href="#">友情链接</a>
+    </p>
+	<script>
+    //需求1:p标签：800px宽  行高40px 红色边框  左右自适应
+    var p_obj = document.querySelector('.navBox');
+    console.log(p_obj);
+    p_obj.style.width = '800px';
+    p_obj.style.lineHeight = '40px';
+    p_obj.style.border = '1px solid red';
+    p_obj.style.margin = '0 auto';
+    console.log(p_obj.style.lineHeight);
+    //需求2：a标签：去掉下划线  字体微软雅黑  16px  左右间距8px
+    //第一个a加红色背景  白色文字
+    var a_obj = document.querySelectorAll('.navBox a');
+    console.log(a_obj);
+    for(i=0;i<=a_obj.length-1;i++){
+    	a_obj[i].style.textDecoration = 'none';
+    	a_obj[i].style.fontFamily = '微软雅黑';
+        a_obj[i].style.fontSize = '16px';
+        a_obj[i].style.padding = '0 8px';   
+    }
+    //给第一个a加样式
+    a_obj[0].style.background = 'red';
+    a_obj[0].style.color = 'white';
+	</script>
+</body>
+</html>

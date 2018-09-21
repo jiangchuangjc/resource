@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+       //需求1：依次输出1-10之间的整数
+       for(num=1;num<=10;num++){
+       	document.write(num+"<hr>");
+       }
+       //查看循环的过程 debug调试(断点调试)
+       //在浏览器里查看
+       //第一步：F12-Sources-文件名(单击)
+       //第二步：在测试的行号上单击(添加一个断点)-F5刷新
+       //第三步：F11依次执行下一步
+       //
+       //需求2：输出50-100之间，能被5和6整除的整数
+       for(var i=50;i<=100;i++){
+       	if(i%5==0 && i%6==0 ){
+       		document.write(i+"<hr>");
+       	}
+       }
+       //需求3:输出1990-2020年之间的闰年年份，并且输出有几个闰年
+       var num=0;
+       var arr=[];//存放闰年
+       for(var year=1990;year<=2020;year++){
+       	  if(year%100!=0 && year%4==0 || year%400==0){
+       	   document.write(year+"年是闰年<hr>");      	   
+       	   num++;
+       	   //把闰年放到数组里
+       	   arr[num-1]=year;      	   
+         }
+       }
+       document.write("一共有"+num+"个闰年");
+       console.log(arr);
+       console.log("一共有"+arr.length+"个闰年");
+
+
+      //需求4：请输入行数
+      //        根据行数输出一个n行的无序列表
+      var list="<ul type=none>";
+      var n=prompt("请输入列表的行数");
+      for(i=1;i<=n;i++){
+          list+="<li>第"+i+"行</li>";
+      }
+      list+="</ul>";
+      document.write(list);
+
+      
+	</script>
+</body>
+</html>

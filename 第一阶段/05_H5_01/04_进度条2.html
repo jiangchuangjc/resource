@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../04_jq_02/jq/jquery-1.9.1.min.js"></script>
+	<script>
+      $(function(){
+      	var a = Number($("progress").attr("value"));
+      	function fun1(){
+        if(a>=100){
+        	window.location = "../03_js_08/06_动态跳转页面.html";
+        }else{
+        	a += 10;
+        	$("progress").attr("value",a);
+        }
+    }
+    fun1();
+    setInterval(fun1, 500);
+});
+	</script>
+</head>
+<body>
+	<progress value=11 max="100"></progress>
+</body>
+</html>

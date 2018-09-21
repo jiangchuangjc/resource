@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+	省份:<select id="province" name="pro" onchange="changePro()">
+			<option value="0">请选择</option>
+		</select>
+	城市:
+		<select id="city" name="city">
+			<option value="0">请选择</option>
+		</select>
+
+		<!-- <select id="area" name="city">
+			<option value="aa">秦淮</option>
+			<option value="bb" selected>玄武</option>
+			<option value="cc">建邺</option>
+			<option value="dd">白下</option>
+		</select> -->
+	
+	<script type="text/javascript">
+	// // 
+	// console.log(document.getElementById('area').selectedIndex);//1
+
+
+	// 省份数组
+	var pro_arr = ['江苏','浙江','安徽','河南'];
+				 // 0       1       2      3
+	// 城市数组
+	var city_arr = [
+		['南京','无锡','常州','苏州'],
+		['杭州','嘉兴','湖州','宁波'],
+		['合肥','马鞍山','黄山','安庆'],
+		['郑州','开封','洛阳']
+	];
+	// 页面初始化
+	var pro_sel = document.getElementById('province');//省下拉列表
+	// console.log(pro_sel);
+	// 把省份取出来放到下拉列表里
+	var opts=""; //存放所有省份的option标签
+	for(key in pro_arr){//key下标 省份:pro_arr[key]
+		opts += "<option value="+key+">"+pro_arr[key]+"</option>";
+		// console.log(opts);
+	}
+
+	// 把option标签放到下拉列表里
+	pro_sel.innerHTML = opts;
+
+	//城市放到下拉列表里
+	var city_sel = document.getElementById('city');//城市的select
+	// console.log(city_sel);
+	var opt_city = "";//存放城市的option标签
+	// 第一组城市：city_arr[0] ['南京','无锡','常州','苏州']
+	for(key in city_arr[0]){
+		opt_city += "<option value="+key+">"+city_arr[0][key]+"</option>";
+	}
+	// console.log(opt_city);
+	//把option标签放到城市下拉列表里
+	city_sel.innerHTML = opt_city;
+
+	// 省份改变触发的行为:changePro(自己起的事情名字)
+	// function 事情名(){  }
+	function changePro(){
+		//1.获取当前选择的省份  pro_sel:省份下拉列表 
+		//属性：selectedIndex   option标签的索引号(下标)
+		var index = pro_sel.selectedIndex;//index是option的下标
+		var current_opt = pro_sel.options[index];//<option></option>
+
+		// console.log(pro_sel.selectedIndex);
+		// console.log(current_opt);
+		// console.log(current_opt.value);
+		// console.log(current_opt.innerHTML);
+		// 当前省份的下标
+		var key = current_opt.value;
+		// 对应的城市 省份的下标=对应一组城市的下标
+
+		var opt_city = "";//存放城市的option标签
+		// 一组城市：city_arr[key] 
+		for(m in city_arr[key]){
+			opt_city += "<option value="+m+">"+city_arr[key][m]+"</option>";
+		}
+		// console.log(opt_city);
+		//把option标签放到城市下拉列表里
+		city_sel.innerHTML = opt_city;
+	}
+
+
+
+
+	</script>
+    </body>
+</html>

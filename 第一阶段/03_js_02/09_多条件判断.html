@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+      //输入你的年龄
+      //0-10   儿童
+      //11-20  少年
+      //21-30  青年
+      //31-60  中年
+      //60以上 老年
+      var age=prompt("请输入你的年龄");
+      if(age>0 && age<=10){
+      	console.log("儿童");
+      }else if(age>=11 && age<=20){
+      	console.log("少年");
+      }else if(age>=21 && age<=30){
+      	console.log("青年");
+      }else if(age>=31 && age<=60){
+      	console.log("中年");
+      }else if(age>60){
+      	console.log("老年");
+      }
+
+      // 验证用户名
+      // 用户名不能为空
+      // 用户名不能超过10个字符
+      // 用户名不能包含@,#,$,%等特殊字符
+      var uname=prompt("请输入用户名:");
+      if(uname==""){
+      	document.write("用户名不能为空");
+      }else if(uname.length>10){
+      	document.write("用户名不能超过10个字符");
+      }else if(uname.indexOf("@")!=-1||
+      	       uname.indexOf("#")!=-1||
+      	       uname.indexOf("$")!=-1||
+      	       uname.indexOf("%")!=-1){
+      	document.write("用户名不能包含@,#,$,%等特殊字符");
+      }
+      else{
+      	document.write("用户名可以使用");
+      }
+	</script>
+</body>
+</html>

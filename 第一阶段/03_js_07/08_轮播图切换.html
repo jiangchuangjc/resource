@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../04_jq_02/jq/jquery-1.9.1.min.js"></script>
+	<style>
+	*{margin:0;padding:0;}
+	.imgBox{
+		/* border:1px solid red; */
+		width: 1200px;
+		height: 530px;
+		position: relative;
+	}
+	.imgBox .imgs img{display: none;}
+	.imgBox .imgs img.current{display: block}
+	
+	.btns span{
+		display: block;
+		width: 70px;
+		height: 60px;
+		/* border:1px solid blue; */
+		position: absolute;
+		top: 50%;
+		margin-top: -30px;
+		font-size: 40px;
+		font-weight: bold;
+		text-align: center;
+		line-height: 60px;
+		color: white;
+		background: rgba(0,0,0,0.5);
+	}
+	.btns span.prev{
+		left: 0;
+	}
+	.btns span.next{
+		right: 0;
+	}
+	.points{
+		position: absolute;
+		left: 0;
+		width: 100%;
+		bottom: 10px;
+		text-align: center;
+		/* border: 1px solid red; */
+		height: 16px;
+	}
+	.points span{
+		width: 16px;height: 16px;
+		background: #efefef;
+		display: inline-block;
+		margin:0 4px;
+	}
+	.points span.current{
+		background: blue;
+	}
+	</style>
+</head>
+<body>
+	<div class="imgBox">
+		<div class="imgs">
+			<img src="img/b_1.jpg" class="current" >
+			<img src="img/b_2.jpg" >
+			<img src="img/b_3.jpg" >
+			<img src="img/b_4.jpg" >
+			<img src="img/b_5.jpg" >
+		</div>
+		<div class="btns">
+			<span class="prev"><</span>
+			<span class="next">></span>
+		</div>
+		<div class="points">
+			<span class='current'></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+	</div>
+	<script>
+	   var num = 0;//记录当前图片的下标
+	   document.title = num;
+       //1)单击右按钮
+       //点击之前是第几张图，下一张是谁，num++       
+       $('.btns .next').click(function(){
+          //如果下标<4,才允许+1,否则归置为0      
+          num<4?num++:num=0;
+          document.title = num;//在标题里显示下标
+          // 下一张图显示
+          showImg(num);//切换图
+          showSquare(num);//切换矩形块
+       });
+       setInterval("$('.btns .next').click()", 2000);
+       //1)单击左按钮
+       //点击之前是第几张图，上一张是谁，num--
+       $('.btns .prev').click(function(){
+       	  //如果下标>0,才允许-1，否则归置为4
+          num>0?num--:num=4;
+          document.title = num;//在标题里显示下标
+          // 上一张图显示
+          showImg(num);//切换图
+          showSquare(num);//切换矩形块
+       });
+      //定义一个函数：切换图显示
+      function showImg(index){
+      	//1)隐藏所有图
+        $('.imgBox .imgs img').hide();
+      	//2)显示切换的图片
+        $('.imgBox .imgs img').eq(index).show();     	
+      }
+       
+      //定义一个函数，切换矩形块的颜色
+      function showSquare(index){
+      	//1)清除所有矩形块的current类
+        $('.points span').removeClass('current');
+        //2)给对应的矩形块添加current类
+        $('.points span').eq(index).addClass('current');
+      }     
+      //点击矩形块切换图片
+      $('.points span').click(function(){
+      	 showImg($(this).index());
+         showSquare($(this).index());
+         num = $(this).index();
+      });
+	</script>
+</body>
+</html>

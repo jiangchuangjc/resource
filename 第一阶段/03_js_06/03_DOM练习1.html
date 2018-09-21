@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      .box{
+      	border: 1px solid red;
+      	width: 820px;
+      }
+      .autoW{
+      	margin: 20px auto;
+      }
+	</style>
+</head>
+<body>
+    <div class="box">
+    	<img src="img/5.jpg">
+    	<img src="img/8.jpg">
+    	<img src="img/9.jpg">
+    	<img src="img/10.jpg">
+    </div>
+	<script>
+      //需求1:用js修改图片的大小 宽200 高150
+      var img_obj = document.querySelectorAll(".box img");
+      console.log(img_obj);
+      //数组里的元素img才可以修改宽高属性
+      for(key in img_obj){
+      	img_obj[key].width = 200;
+      	img_obj[key].height = 150;
+      } 
+      // 需求2:把autoW类添加给div盒子
+      var box_obj = document.querySelector('div');
+      console.log(box_obj); 
+      box_obj.className +=' autoW';  
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <style>
+     .pro{
+      outline: none;
+     }
+     .city{
+      outline: none;
+     }
+  </style>
+</head>
+<body>
+    <!-- 省份的下拉列表 -->
+    省份:<select id="pro" class="pro" onchange="changePro()"></select>
+    <!-- 城市下拉列表 -->
+    城市:<select id="city" class="city"></select>
+	<script>
+       //省份的数组
+       var proArr = ['江苏省','浙江省','安徽省','河南省'];
+       //城市的数组
+       var cityArr = [
+          ['南京市','无锡市','苏州市','扬州市'],  
+          ['杭州市','绍兴市','温州市','宁波市'],  
+          ['黄山市','合肥市','芜湖市','安庆市'],  
+          ['郑州市','开封市','洛阳市','信阳市'],  
+       ]
+       //1)查找下拉列表标签元素 根据id找
+       var pro_sel = document.getElementById('pro');
+       var city_sel = document.getElementById('city');
+       console.log(pro_sel);
+       console.log(city_sel);
+       //2)往select里放内容 放省份
+       for(key in proArr){//省份名:proArr[key]
+        pro_sel.innerHTML += "<option>"+proArr[key]+"</option>";
+      }
+       //3)往select里放内容 放城市：第一组城市 cityArr[0];
+       function fun1(num){
+       for(key in cityArr[num]){//省份名:cityArr[0][key]
+        city_sel.innerHTML += "<option>"+cityArr[num][key]+"</option>";
+       }
+     }
+       fun1(0);
+       //4)联动效果
+       /*
+          省份下拉列表选项改变的时候:去做事情 
+          onchange事件:内容发生改变会触发的事件
+          获取当前是哪个省份(选项):
+          selectedIndex属性:被选中的option的索引下标
+
+        */
+       function changePro(){
+        //所有事情的执行过程
+        //获取被选中的option索引下标
+        var i = pro_sel.options.selectedIndex;
+        console.log(pro_sel.options);
+        console.log(i); 
+        city_sel.innerHTML=null;//清空原先的城市
+        fun1(i);
+    }
+	</script>
+</body>
+</html>

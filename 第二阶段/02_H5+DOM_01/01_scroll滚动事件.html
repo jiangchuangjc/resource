@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,body{
+      margin: 0;
+      top: 0;
+    }
+    .box1{
+      height: 2000px;
+      /* border: 1px solid red; */
+      background: pink;
+      font-size: 50px;
+      padding-left: 20px;
+      padding-top: 50px;
+    }
+    .navBox{
+      line-height: 50px;
+      width: 100%;
+      background:rgba(255,255,255,0.5);
+      /* 固定在浏览器窗口最顶端 */
+      position: fixed;
+      top: 0;
+      left: 0;
+      text-align: center;
+      font-size:36px; 
+    }
+    .toggle{
+      background:skyblue;
+      color:pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="navBox">导航文字</div>
+  <div class="box1">这<br>是<br>页<br>面<br>内<br>容<br>区</div>
+  <script>
+    
+     //当浏览器滚动时:去做一件事情
+     //当滚动条发生变化时
+     window.onscroll = function(){
+      //  console.log('页面滚动了');
+       //距离顶部滚动的间距 scrollTop属性
+       var top = document.documentElement.scrollTop || document.body.scrollTop;
+       console.log(top);
+       var nav_obj = document.querySelector('.navBox');
+       if(top == 0){//导航条:初始状态
+         console.log('初始状态');        
+         nav_obj.classList.remove('toggle');
+       }else if(top>=120){
+         //导航条:切换白色背景         
+         nav_obj.classList.add('toggle');                                                                       
+       }
+     }
+  </script>
+</body>
+</html>

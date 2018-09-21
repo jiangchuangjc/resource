@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       .p1{
+          width: 700px;
+          height: 60px;
+          /* border: 1px solid skyblue; */
+          font-size: 36px;
+          color: red;
+          margin: 100px auto;
+       }
+     </style>
+</head>
+<body>
+    <p class="p1"></p>
+	<script>
+       //当前距离1970年1月1日 有多少毫秒
+      function double11(){
+      var time = new Date().getTime();
+      console.log(time);
+      //2018/11/11距离1970年1月1日 有多少毫秒
+      var endTime = new Date('2018/11/11').getTime();
+      console.log(endTime);
+      //差值 今天距离双11有多少毫秒
+      var offTime = (endTime-time)/1000/60/60/24;//单位：天
+      var days = Math.floor(offTime); 
+      console.log(days);
+      var hours = Math.floor((offTime-days)*24);
+      console.log(hours);
+      var minutes = Math.floor(((offTime-days)*24-hours)*60);
+      console.log(minutes);
+      var seconds = Math.floor((((offTime-days)*24-hours)*60-minutes)*60);
+      console.log(seconds);
+      if(hours<10){hours='0'+hours;}
+      if(minutes<10){minutes='0'+minutes;}
+      if(seconds<10){seconds='0'+seconds;} 
+      var now = "距离双11还有"+days+"天"+hours+"小时"+minutes+"分钟"+seconds+"秒！";
+      var p_obj = document.querySelector('.p1');
+      //把时间显示到页面上
+      p_obj.innerHTML = now;
+  }
+     //动态显示：计时器间隔1s重新操作步骤1
+     double11();
+     setInterval(double11,1000); 
+	</script>
+</body>
+</html>

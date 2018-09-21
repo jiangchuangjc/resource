@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+       .p1{
+          width: 600px;
+          height: 60px;
+          /* border: 1px solid skyblue; */
+          font-size: 36px;
+          color: red;
+          margin: 100px auto;
+       }
+     </style>
+</head>
+<body>
+    <p class="p1"></p>
+	<script>
+      var num = 5;
+      var p_obj = document.querySelector('.p1');     
+      function fun1(){
+      	// window.location = "http://www.baidu.com";      	
+	    if(num>0){
+	  	  now = '距离跳转页面还有'+num+'秒';
+	  	  p_obj.innerHTML = now;
+	  	  num--;  
+	   }else{
+	  	window.location = "05_双11.html";
+	   }        
+}     
+      fun1();
+      //计时器，间隔1s调用一次function()
+      setInterval(fun1,1000); 
+	</script>
+</body>
+</html>

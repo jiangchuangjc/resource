@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//需求：存储一个学生的信息
+	//apple female study 18
+      var student=[];
+      student[0]="apple";
+      student[1]="female";
+      student[2]="study";
+      student[3]=18;
+      student[5]="basketball";
+      console.log(student);
+
+      //需求2：存储商品信息
+      //商品名：iphone
+      //单价：8000
+      //数目：100
+      var proArr=new Array();
+      proArr["name"]="iphone";
+      proArr["price"]=8000;
+      proArr["num"]=100;
+      console.log(proArr);
+      //取值
+      console.log(proArr["price"]);
+
+      //下标是数字-----索引数组
+      //下标是字符串----关联数组
+      
+      //获取数组的长度==最大的数值下标+1
+      console.log(student.length);//6
+      //
+      console.log(proArr.length);//0
+	</script>
+</body>
+</html>

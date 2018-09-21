@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 引入jq文件 -->
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<!-- 写自己的语句 -->
+	<script>
+      $(function(){
+      	 //dom加载完成之后...
+      	 //需求1:修饰h3 红色边框
+      	 $("#title").css('border', '1px solid red');
+      	 $("#title").css('width', '300px');
+      	 
+      	 $("#title").css({
+      	 	lineHeight: '40px',
+      	 	"text-align": 'center'
+      	 });
+
+      	 // 需求2:用户名输入框
+      	 // 蓝色边框，浅黄色背景
+      	 // 密码输入框
+      	 // 橘色边框
+      	 // 粉色背景色
+      	 $("input[name=uname]").css({
+      	 	border: '1px solid blue',
+      	 	background: '#CFCD1C'
+      	 });
+      	 $("input[name=upass]").css({
+      	 	border: '1px solid orange',
+      	 	background: 'pink'
+      	 });
+      	 // 需求3
+      	 // 无序列表加黑色边框，行高40
+      	 // 每一行加一个虚线下边框，最后一行除外
+      	 // 偶数行浅蓝色背景
+      	 $(".list").css({
+      	 	border: '1px solid black',
+      	 	lineHeight: '40px'
+      	 	// "list-style-type":'none'
+      	 });
+      	 $(".list li").css('border-bottom', '1px dotted #7C7373');
+      	 $(".list li:last").css('border-bottom', 'none');
+         $(".list li:odd").css('background', 'skyblue');
+
+         // 获取样式的值 css(样式名)
+         console.log($("#title").css("border"));
+         //移除边框样式
+         $("#title").css("border",'');
+      })
+	</script>
+</head>
+<body>
+	<h3 id="title">用户注册</h3>
+	用户名:<input type="text" name="uname"><br><br>
+	密&nbsp;码:<input type="password" name="upass"><br>
+	<ul class="list">
+		<li>花瓣网</li>
+		<li>百度</li>
+		<li>京东</li>
+		<li>淘宝</li>
+		<li>一品威客</li>
+	</ul>
+</body>
+</html>

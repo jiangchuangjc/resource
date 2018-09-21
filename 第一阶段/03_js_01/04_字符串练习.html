@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+       //案例1：给一个输入框，输入姓名
+       //输出姓名的长度
+       //检测姓名里是否有@
+       
+       var uname=prompt("请输入用户：");
+       console.log("用户名长度为"+uname.length);
+       //结果是-1，说明没有@，否则有@
+       if(uname.indexOf("@")==-1){
+       	 console.log("不含@");
+       }else{
+       	 console.log("含有@");
+       }
+       //案例2：给一个输入框，输入密码
+       //输出密码的长度
+       //输出的密码是大写字母
+       //
+       var upass=prompt("请输入密码：");
+       console.log("密码长度为"+upass.length);
+       console.log("输出的密码是"+upass.toUpperCase());
+
+       //直接输出值
+       document.write("用户名是:"+uname);
+       document.write(uname+upass);
+       document.write("<hr>");
+       document.write("<p style=\"color:red\">我的用户名是:"+uname+"</p>");
+       document.write("<p>我的密码是:"+upass+"</p>");
+
+       //变量里值拼接
+       var myTel=prompt("请输入联系方式：");
+       var myaddress=prompt("请输入家庭住址：");
+       var myschool=prompt("请输入就读学校：");
+       //存储：拼接成一个列表，并且输出
+       var list="<ul type='none'>";
+           list+="<li>联系方式:"+myTel+"</li>";
+           list+="<li>家庭住址:"+myaddress+"</li>";
+           list+="<li>就读学校:"+myschool+"</li>";
+           list+="</ul>";
+        document.write(list);
+	</script>
+</body>
+</html>

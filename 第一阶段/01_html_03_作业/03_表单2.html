@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.uname{
+			
+			width: 255px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<p align="center"><font size="+10" face="楷体">用户调查表</font></p>
+	 <form action="index.php">
+	<table border="1px" cellspacing="0" align="center">
+		<tr>
+			<td width="170" align="center"><font size="+3" face="黑体">姓名：</font></td>
+			<td><input type="text" value="请输入真实姓名" name="uname" class="uname"></td>
+		</tr>
+		<tr>
+			<td align="center"><font size="+3" face="黑体">性别：</font></td>
+			<td>男<input type="radio" name="sex" value="male">&nbsp;
+	            女<input type="radio" name="sex" value="female">&nbsp;
+	            保密<input type="radio" name="sex" value="secret" checked></td>
+		</tr>
+		<tr>
+			<td><font size="+3" face="黑体">出生日期：</font></td>
+			<td><select name="year">
+					<option value="1991">1991年</option>
+					<option value="1992">1992年</option>
+					<option value="1993">1993年</option>
+	            </select>
+	            <select name="month">
+					<option value="earlymonth">1~6月</option>
+					<option value="latermonth">7~12月</option>
+	            </select>
+	            <select name="day">
+					<option value="earlyday">1~15日</option>
+					<option value="laterday">16~31日</option>
+	            </select>
+	            </td>
+		</tr>
+		<tr>
+			<td><font size="+3" face="黑体">家庭地址：</font></td>
+			<td><select name="province">
+					<option value="jiangsu">江苏省</option>
+					<option value="zhejiang">浙江省</option>
+					<option value="anhui">安徽省</option>
+	            </select>
+	            <select name="city">
+					<option value="nanjing">南京市</option>
+					<option value="huaian" selected>淮安市</option>
+					<option value="suqian">宿迁市</option>
+	            </select>
+	            <select name="area">
+					<option value="shuyang">沭阳县</option>
+					<option value="huaiyin" selected>淮阴区</option>
+					<option value="xuanwu">玄武区</option>
+	            </select>
+	            </td>
+		</tr>
+		<tr>
+			<td><font size="+3" face="黑体">兴趣爱好：</font></td>
+			<td valign="middle">
+			    音乐<input type="checkbox" name="hobby" value="music" checked>&nbsp;
+	            篮球<input type="checkbox" name="hobby" value="basketball">&nbsp;
+	            游泳<input type="checkbox" name="hobby" value="swim">
+	            其他<input type="checkbox" name="hobby" value="other">
+	            </td>
+		</tr>
+		<tr>
+			<td><font size="+3" face="黑体">本人照片：</font></td>
+			<td><input type="file" name="photo" multiple></td>
+		</tr>
+		<tr>
+			<td height="60"><font size="+3" face="黑体">本人简介：</font></td>
+			<td><textarea name="intro" id="" cols="40" rows="4"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit">
+				<input type="reset" value="取消">
+			</td>		
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

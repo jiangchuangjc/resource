@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+       //计算购买商品的总价
+       //price 单价
+       //count  数目
+       function pay(price,count){
+          var total = price*count;//总价
+          //document.write(total+"<br>");
+          //return 返回值
+          console.log("正在计算...");
+          return total;//遇到return 终止整个函数
+          document.write("<hr color=red>");//无效的
+          return "计算商品的价格";//无效的
+       }    
+
+       //用户1：单价:20  数目:5 
+       document.write(pay(20,5));//100
+       document.write("<br>");
+       //用户2：单价:30  数目:2
+       console.log(pay(30,2));//60
+
+       //用户3：购买了三件商品
+       //iphone:200*10
+       //私人飞机:300*5
+       //法拉利:150*2
+       // document.write(pay(200,10)+pay(300,5)+pay(500,2));
+       document.write("<br>");
+       var pro_1=pay(200,10);
+       console.log(pro_1);
+       var pro_2=pay(300,5);
+       console.log(pro_2);
+       var pro_3=pay(500,2);
+       console.log(pro_3);
+       var totalPrice = pro_1+pro_2+pro_3;
+       document.write("用户3总共花费"+totalPrice+"元");
+	</script>
+</body>
+</html>

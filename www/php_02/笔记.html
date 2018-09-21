@@ -1,0 +1,81 @@
+第二章 PHP
+第二节
+一、php的数据类型
+<?php
+  //1)字符串 String
+  $str = 'apple';
+  $age = '18';
+  //2)整数型 Int
+  $num1 = 10;
+  //3)浮点数 Float
+  $num2 = 3.14;
+  //4)布尔型 Boolean true|false
+  $boo = true;
+  //5)数组 Array
+  //索引数组
+  $arr1 = array(1,2,3,4,5);
+             //0 1 2 3 4 默认下标
+  //关联数组
+  $arr2 = array('uname'=>'LiLei','age'=>18,'sex'=>'男');
+  $arr3 = array();
+  $arr3['code'] = '001';
+  $arr3['name'] = 'Hanmeimei';
+  $arr3['pass'] = '123456';
+
+  //根据下标取值
+  $arr2['name']; //LiLei;
+
+  //获取数组长度(可以获取任意数组的长度)
+  count($arr1) //5
+?>
+二、用php文件来接收html网页传递的数据
+   1)form表单提交数据:action='后台页面的地址'
+   2)地址在后台页面接收
+   3)数据的传递方式:method='get/post'
+
+   文件上传问题:
+   1)要把文件所有的相关信息传递到后台页面去
+   2)php文件可以获取到文件的存储地址
+     把文件从存储地址转移到服务器地址
+   3)在html页面必要要给form添加一个属性
+     enctype='multipart/form-data'
+   4)在php页面上接收
+     通过 $_FILES 来接收文件信息
+     A)是一个二维数组的格式
+     array(
+       'photo'=>array(
+         'name'=>'8.jpg', //文件名
+         'type'=>'image/jpeg', //文件格式
+         'tmp_name'=>'C:\wamp\tmp\phpA84D.tmp' //临时地址
+         'error'=>0, //文件上传状态,0代表成功
+         'size'=>228036 //文件大小
+       )
+     )
+    5)转移文件
+    <?php
+    //php开发人员负责处理文件:把文件保存到服务器的地址里
+    // move_uploaded_file('移动谁','到哪去');
+    $file = $_FILES['photo']['tmp_name'];//文件的临时存储地址
+    $name = $_FILES['photo']['name'];//文件名
+    echo $file;
+    move_uploaded_file($file,'./upload/'.$name);
+   ?>
+
+三、Ajax 是js里一门技术
+   1)可实现异步通信
+   2)可实现局部刷新
+
+   实现方法:利用jq提供的方法(函数)
+   1)$.ajax()
+   <script>
+     $.ajax({
+       url:'请求的后台页面地址',
+       type:'get|post',
+       data:'uname=apple',//发送到服务器后台页面的数据
+       dataType:'xml|html|text|script|json',//服务器返回的数据类型
+       success:function(data){
+         //请求成功之后,要做的事情
+         //data参数:保存服务器后台页面返回给我们的数据
+       }
+     });
+   </script>

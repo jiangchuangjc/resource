@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+      *{
+      	margin: 0;
+      	padding: 0;
+      }
+      .box{
+      	width: 1200px;
+      	border: 1px solid red;
+      	margin: 30px;
+      	position: relative;
+      	height: 530px;/*需要删除*/
+      }
+      /* 小图区域 */
+      .box .small_box{
+      	border: 2px solid green;
+      	position: absolute;
+      	right: 10px;
+      	bottom: 10px;
+      }
+      .box .small_box img{
+      	margin: 4px 5px;
+      }
+      .box .small_box img.current{
+      	border: 2px solid red;
+      }
+      /* 遮罩层区域 */
+      .box .mask{
+      	width: 300px;
+      	height: 100%;
+      	position: absolute;
+      	top: 0;
+      	left: 0;
+      	background: rgba(0,0,0,0.5);
+      	color: white;
+      	font-size: 20px;
+      	text-align: center;
+      	line-height: 36px;
+      }
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+      $(function(){
+      	//1)模拟图文数据 0:名字 1:昵称 2:口头禅 3:小图 4:大图
+      	var arr = [
+          ['鲁班七号','机关造物','鲁班大师，智障250，膜拜，忌惮膜拜。','s_1.jpg','b_1.jpg'],
+          ['安琪拉','暗夜萝莉','生命就像人家的魔法书，涂涂改改又是一年','s_2.jpg','b_2.jpg'],
+          ['庄周','逍遥梦幻','蝴蝶是我，我就是蝴蝶','s_3.jpg','b_3.jpg'],
+          ['鲁班七号','机关造物','鲁班大师，智障250，膜拜，忌惮膜拜。','s_1.jpg','b_1.jpg'],
+          ['安琪拉','暗夜萝莉','生命就像人家的魔法书，涂涂改改又是一年','s_2.jpg','b_2.jpg'],
+          ['庄周','逍遥梦幻','蝴蝶是我，我就是蝴蝶','s_3.jpg','b_3.jpg']
+      	];
+      	console.log(arr);
+      	//2)初始状态:显示相关的信息     	
+      	var imgs = "";//存储小图
+      	for(key in arr){//小图 arr[key][3]
+      		imgs += "<img src='img/hero/"+arr[key][3]+"'>";
+      	}
+      	$(".box .small_box").html(imgs);
+      	function showMess(index){
+        $(".box>img").attr("src","img/hero/"+arr[index][4]);
+      	$('.mask .nick').html(arr[index][1]);
+      	$('.mask .uname').html(arr[index][0]);
+      	$('.mask .speak').html(arr[index][2]);
+      	$(".box .small_box img").removeClass('current');
+      	$(".box .small_box img").eq(index).addClass('current');
+       }
+       showMess(0);
+      	//3)单击小图:切换他对应的信息
+      	$(".box .small_box img").click(function(){
+      		showMess($(this).index());
+      	});
+      });
+	</script>
+</head>
+<body>
+	<div class="box">
+		<!-- 大图(1张) -->
+		<img src="">
+
+		<!-- 小图(所有) -->
+		<div class="small_box"></div>
+        
+		<!-- 遮罩层(文本信息) -->
+		<div class="mask">
+			<p class="nick"></p>
+			<p class="uname"></p>
+			<p class="speak"></p>
+		</div>
+	</div>
+</body>
+</html>

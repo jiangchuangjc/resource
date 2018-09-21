@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+       //案例1:输入一个数值，判断是否是5和3的倍数
+       var num=prompt("请输入一个数值");
+       if(num%5==0&&num%3==0){
+       	console.log("数值"+num+"能被5整除并且能被3整除");
+       }else{
+       	console.log("数值"+num+"不能被5或者3整除");
+       }
+       //案例2:验证用户名,不能包含特殊字符
+       //uname.indexOf("@")==-1
+       var uname=prompt("请输入用户名");
+       if(uname.indexOf("@")==-1){
+       	console.log("用户名"+uname+"不包含字符@");
+       }else{
+       	console.log("用户名"+uname+"包含字符@");
+       }
+       //案例3:验证密码,密码必须为6位
+       var upass=prompt("请输入密码");
+       if(upass.length==6){
+       	console.log("密码"+upass+"是6位");
+       }else{
+       	console.log("密码"+upass+"不是6位");
+       }
+	</script>
+</body>
+</html>

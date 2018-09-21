@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../04_jq_02/jq/jquery-1.9.1.min.js"></script>
+
+</head>
+<body>
+	<progress value=10 max="100" class="p1"></progress>
+	<script>
+       function load(){
+       	  var a = document.querySelector('.p1');
+       	  console.log(a.value);
+       	  if(a.value==100){
+       	  	window.location = "../03_js_08/06_动态跳转页面.html";
+       	  }else{
+       	  	a.value += 10;
+       	  }
+       }
+       load();
+       setInterval(load, 1000);
+	</script>
+</body>
+</html>

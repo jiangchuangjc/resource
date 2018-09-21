@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/* 默认链接状态 */
+      .nav a:link{
+      	color: #312B2B;
+      	text-decoration: none;
+      	font-size: 24px;
+      }
+      /* 鼠标经过/悬停 */
+      .nav a:hover{
+      	color: orange;
+      	text-decoration: underline;
+      }
+      /* 鼠标单击按下与释放之间 */
+      .nav a:active{
+      	color: green;
+      }
+      /* 访问过后 */
+      .nav a:visited{
+      	color: red;
+      }
+
+      input{
+      	width: 100px;
+      	height: 40px;
+      	color: skyblue;
+      }
+
+      input:hover{
+            color: blue;
+      }
+      input:active{
+            color: green;
+      }
+      input:visited{
+            color: orange;
+      }
+	</style>
+</head>
+<body>
+	<p class="nav">
+		<a href="#" class="one">百度</a>
+		<a href="#">腾讯</a>
+		<a href="#">淘宝</a>
+		<a href="#">京东</a>
+	</p>
+
+	<input type="button" value="按钮">
+</body>
+</html>

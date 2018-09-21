@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log(Number.MIN_VALUE);
+    console.log(Number.MAX_VALUE);
+    console.log(isFinite(5e-324));
+    console.log(isFinite(1.8e+310));
+    console.log(Number.NEGATIVE_INFINITY);
+    console.log(Number.POSITIVE_INFINITY);
+    console.log(0/0);
+    console.log(NaN == NaN); 
+    alert(isNaN(NaN)); //true
+    alert(isNaN(10)); //false（10 是一个数值）
+    alert(isNaN("10")); //false（可以被转换成数值10）
+    alert(isNaN("blue")); //true（不能转换成数值）
+    alert(isNaN(true)); //false（可以被转换成数值1）
+  </script>
+</body>
+</html>

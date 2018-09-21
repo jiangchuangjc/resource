@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+        #uname{
+        	outline: none;
+        }
+        #upass{
+        	outline: none;
+        }
+	</style>
+</head>
+<body>
+    <form action="">
+    	用户名:<input type="text" value="请输入用户名" id="uname"><br><br>
+    	密&nbsp;码:<input type="password" id="upass"><br>
+    </form>
+	<script>
+        //用户名:获得焦点:添加浅黄色背景，文字颜色蓝色
+        //用户名:失去焦点:去掉背景色，文字颜色黑色
+        //密码:获得焦点，紫色边框
+        //失去焦点：灰色边框
+        var userName = document.getElementById('uname');
+        userName.onfocus = function(){
+        	userName.style.background = '#E1EA9A';
+        	userName.style.color = 'blue';
+        }
+        userName.onblur = fun1;
+        function fun1(){
+        	userName.style.background = '';
+        	userName.style.color = 'black';
+        }
+
+        var userPass = document.getElementById('upass');
+        userPass.onfocus = function(){
+        	userPass.style.border = '1px solid purple';
+        }
+         userPass.onblur = function(){
+        	userPass.style.border = '1px solid #908787';
+        }
+	</script>
+</body>
+</html>

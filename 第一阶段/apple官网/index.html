@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	   .father:after{
+		content: "";
+		display: block;
+		clear: both;
+       }
+	   *{
+	   	margin: 0;
+	   	padding: 0;
+	   }
+       .navBox{
+       	/* background: #606060; */
+       }
+       .navBox .con{
+         width: 1000px;
+         margin: 0 auto;
+         /* overflow: hidden; */
+       }
+       .navBox .navTxt{
+         float: left;
+         /* width: 150px; */
+         margin-left: 20px;
+         position: relative;
+         border: 1px solid red;
+         width: 80px;
+         text-align: center;
+       }
+       .navBox .navTxt>a{
+       	text-decoration: none;
+       	line-height: 30px;
+       	color: red;
+       	font-weight: bold;
+       }
+       .navBox .navTxt>a:hover{
+       	color: black;
+       }
+       .navBox .navTxt ul{
+       	list-style-type: none;
+       	/* border: 1px solid red; */
+        position: absolute;
+        left: 0;
+        top: 30px;
+        text-align: center;
+        width: 100%;
+        display: none;
+        background: #C0BDBD;
+       }
+       .navBox .navTxt:hover ul{
+       	display: block;
+       }
+       .navBox .navTxt ul a{
+       	color: black;
+       	text-decoration: none;
+       	line-height: 30px;
+       	font-weight: bold;
+       }
+       .navBox .navTxt ul a:hover{
+       	color: white;
+       }
+       /* .navBox:hover>ul{
+       	display: inline-block;
+       } */
+	</style>
+</head>
+<body>
+	<div class="navBox">
+		<div class="con autoW father">
+			<!-- 导航文本 -->
+			<div class="navTxt father">
+				<a href="#">在线商店</a>
+				<ul>
+					<li><a href="#">了解更多</a></li>
+					<li><a href="#">继续查看</a></li>
+					<li><a href="#">商业用途</a></li>
+				</ul>
+			</div>
+			<div class="navTxt">
+				<a href="#">MAC</a>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">次页</a></li>
+					<li><a href="#">尾页</a></li>
+				</ul>
+			</div>
+			<div class="navTxt">
+				<a href="#">ipad</a>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">次页</a></li>
+					<li><a href="#">尾页</a></li>
+				</ul>
+			</div>
+			<div class="navTxt">
+				<a href="#">iphone</a>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">次页</a></li>
+					<li><a href="#">尾页</a></li>
+				</ul>
+			</div>
+			<div class="navTxt">
+				<a href="#">Watch</a>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">次页</a></li>
+					<li><a href="#">尾页</a></li>
+				</ul>
+			</div>
+			<div class="navTxt">
+				<a href="#">Music</a>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">次页</a></li>
+					<li><a href="#">尾页</a></li>
+				</ul>
+			</div>
+			<div class="navTxt">
+				<a href="#">技术支持</a>
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">次页</a></li>
+					<li><a href="#">尾页</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

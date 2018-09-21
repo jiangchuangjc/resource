@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	ul,li{list-style: none;}
+	.list{
+		margin:20px;
+		line-height: 30px;
+	}
+
+	</style>
+</head>
+<body>
+	<ul class="list">
+		<li><h3>2018年我的愿望</h3></li>
+		<li><input type="checkbox" name="all" onclick="fun1()">全选</li>
+		<li><input type="checkbox" name="dream"> 钱包鼓一点</li>
+		<li><input type="checkbox" name="dream"> 体重轻一点</li>
+		<li><input type="checkbox" name="dream"> 工作轻松点</li>
+		<li><input type="checkbox" name="dream"> 旅游多一点</li>
+	</ul>
+	<script>
+       //单击全选复选框：获取他的状态，添加给下面一组复选框
+       //1)获取复选框对象
+       var all_obj = document.querySelector('input[name=all]');
+       var group_obj = document.querySelectorAll('input[name=dream]');
+       console.log(all_obj);
+       console.log(group_obj);
+
+       //2)添加单击事件
+       all_obj.onclick = function(){
+       	  console.log(all_obj.checked);
+       	  console.log(this);
+       	  //循环遍历组合里的选项，修改状态
+       	  for(var i=0;i<=group_obj.length-1;i++){
+       	  	group_obj[i].checked = all_obj.checked;
+       	  }
+       }
+	</script>
+</body>
+</html>
